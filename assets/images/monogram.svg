@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5EBDD" />
+      <stop offset="30%" stop-color="#D4AF7F" />
+      <stop offset="70%" stop-color="#AA7738" />
+      <stop offset="100%" stop-color="#D4AF7F" />
+    </linearGradient>
+    <linearGradient id="wineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#800020" />
+      <stop offset="100%" stop-color="#4A001F" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.85" />
+  <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" />
+  
+  <!-- Burgundy Inner Medallion -->
+  <circle cx="100" cy="100" r="78" fill="url(#wineGrad)" filter="url(#shadow)" />
+  <circle cx="100" cy="100" r="74" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6" />
+  
+  <!-- Laurel / Olive Branch Wreath -->
+  <g fill="none" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round">
+    <!-- Left wreath arc -->
+    <path d="M 45 105 C 42 70, 65 42, 95 38" />
+    <!-- Left leaves -->
+    <path d="M 46 95 C 38 90, 42 82, 49 88 Z" fill="url(#goldGrad)"/>
+    <path d="M 52 78 C 45 72, 50 64, 57 71 Z" fill="url(#goldGrad)"/>
+    <path d="M 64 62 C 58 55, 66 48, 71 56 Z" fill="url(#goldGrad)"/>
+    <path d="M 80 48 C 76 40, 86 36, 89 44 Z" fill="url(#goldGrad)"/>
+
+    <!-- Right wreath arc -->
+    <path d="M 155 105 C 158 70, 135 42, 105 38" />
+    <!-- Right leaves -->
+    <path d="M 154 95 C 162 90, 158 82, 151 88 Z" fill="url(#goldGrad)"/>
+    <path d="M 148 78 C 155 72, 150 64, 143 71 Z" fill="url(#goldGrad)"/>
+    <path d="M 136 62 C 142 55, 134 48, 129 56 Z" fill="url(#goldGrad)"/>
+    <path d="M 120 48 C 124 40, 114 36, 111 44 Z" fill="url(#goldGrad)"/>
+  </g>
+  
+  <!-- Intertwined Monogram Letters "I & A" -->
+  <text x="76" y="118" font-family="'Great Vibes', 'Playfair Display', Georgia, serif" font-size="56" fill="url(#goldGrad)" font-style="italic" text-anchor="middle" font-weight="bold">I</text>
+  <text x="100" y="106" font-family="'Playfair Display', Georgia, serif" font-size="22" fill="#F5EBDD" text-anchor="middle" font-weight="300" opacity="0.9">&amp;</text>
+  <text x="124" y="122" font-family="'Great Vibes', 'Playfair Display', Georgia, serif" font-size="56" fill="url(#goldGrad)" font-style="italic" text-anchor="middle" font-weight="bold">A</text>
+  
+  <!-- Bottom Ribbon / Date Star -->
+  <g fill="url(#goldGrad)" transform="translate(100, 145)">
+    <polygon points="0,-4 3,-1 7,-1 4,2 5,6 0,3 -5,6 -4,2 -7,-1 -3,-1" />
+  </g>
+  <text x="100" y="162" font-family="'Montserrat', sans-serif" font-size="8.5" fill="#F5EBDD" text-anchor="middle" letter-spacing="3" opacity="0.85">DECEMBER 2026</text>
+</svg>

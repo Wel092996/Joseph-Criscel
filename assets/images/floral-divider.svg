@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 60" width="500" height="60">
+  <defs>
+    <linearGradient id="divGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF7F" stop-opacity="0" />
+      <stop offset="25%" stop-color="#D4AF7F" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#FFF8F0" />
+      <stop offset="75%" stop-color="#D4AF7F" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#D4AF7F" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="roseMedallion" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A51D3D" />
+      <stop offset="50%" stop-color="#800020" />
+      <stop offset="100%" stop-color="#4A001F" />
+    </linearGradient>
+    <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8F0" />
+      <stop offset="50%" stop-color="#D4AF7F" />
+      <stop offset="100%" stop-color="#AA7738" />
+    </linearGradient>
+  </defs>
+
+  <!-- Horizontal Fine Lines -->
+  <line x1="30" y1="30" x2="200" y2="30" stroke="url(#divGold)" stroke-width="1.2" />
+  <line x1="300" y1="30" x2="470" y2="30" stroke="url(#divGold)" stroke-width="1.2" />
+
+  <!-- Left Flourish -->
+  <path d="M 200 30 C 215 30, 222 22, 230 22 C 236 22, 238 27, 232 29 C 224 31, 218 36, 228 38 C 235 39, 238 34, 234 30" 
+        fill="none" stroke="url(#goldAcc)" stroke-width="1.4" stroke-linecap="round" />
+  <circle cx="210" cy="30" r="2.2" fill="url(#goldAcc)" />
+  <circle cx="160" cy="30" r="1.5" fill="url(#goldAcc)" />
+
+  <!-- Right Flourish (Symmetric) -->
+  <path d="M 300 30 C 285 30, 278 22, 270 22 C 264 22, 262 27, 268 29 C 276 31, 282 36, 272 38 C 265 39, 262 34, 266 30" 
+        fill="none" stroke="url(#goldAcc)" stroke-width="1.4" stroke-linecap="round" />
+  <circle cx="290" cy="30" r="2.2" fill="url(#goldAcc)" />
+  <circle cx="340" cy="30" r="1.5" fill="url(#goldAcc)" />
+
+  <!-- Center Rose Blossom -->
+  <g transform="translate(250, 30)">
+    <!-- Little leaves -->
+    <path d="M -12 -5 C -18 -12, -8 -16, 0 -12 Z" fill="#4A6B32" opacity="0.85" />
+    <path d="M 12 5 C 18 12, 8 16, 0 12 Z" fill="#4A6B32" opacity="0.85" />
+    <!-- Rose circle petals -->
+    <circle cx="0" cy="0" r="11" fill="url(#roseMedallion)" stroke="url(#goldAcc)" stroke-width="1.2" />
+    <path d="M -7 -4 C -2 -9, 6 -7, 7 0 C 8 7, 0 8, -6 5 C -9 2, -9 -1, -7 -4 Z" fill="#6D102C" />
+    <circle cx="0" cy="0" r="5" fill="#A51D3D" />
+    <circle cx="0" cy="0" r="2" fill="url(#goldAcc)" />
+  </g>
+</svg>
