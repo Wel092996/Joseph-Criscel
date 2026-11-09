@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Isabella & Alexander — Wedding Invitation | December 19, 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Criscel &amp; Joseph — Wedding Celebration | November 24, 2026</title>
   
   <!-- Meta & SEO Tags -->
-  <meta name="description" content="We invite you to celebrate the holy matrimony of Isabella Marie Santos & Alexander James Ramos on Saturday, December 19, 2026.">
-  <meta property="og:title" content="Isabella & Alexander — Wedding Invitation">
-  <meta property="og:description" content="Together with our families, we invite you to celebrate our special day in Manila, Philippines.">
+  <meta name="description" content="We invite you to celebrate the holy matrimony of Criscel & Joseph on Tuesday, November 24, 2026 at St. Anthony of Padua Parish, Tabaco City, Albay.">
+  <meta property="og:title" content="Criscel &amp; Joseph — Wedding Invitation">
+  <meta property="og:description" content="Together with our families, we invite you to celebrate our wedding in Tabaco City, Albay.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
 
@@ -28,26 +28,24 @@
 </head>
 <body>
 
-  <!-- =========================================================================
-       CANVAS FOR FLOATING ROSE PETALS & GOLD SPARKLES
-       ========================================================================= -->
+  <!-- Canvas for Floating Burgundy Rose Petals & Gold Sparkles -->
   <canvas id="particles-canvas"></canvas>
 
   <!-- =========================================================================
-       ROYAL INVITATION ENVELOPE / ENTER INVITATION OVERLAY
+       ROYAL INVITATION ENVELOPE / OPENING LANDING OVERLAY
        ========================================================================= -->
   <div id="envelope-overlay" class="envelope-overlay">
     <div class="envelope-card">
       <!-- Monogram Seal -->
-      <img src="assets/images/monogram.svg" alt="Isabella & Alexander Monogram" class="envelope-monogram">
+      <img src="assets/images/monogram.svg" alt="Criscel & Joseph Monogram" class="envelope-monogram">
       
       <p class="envelope-invitation-text">Formal Wedding Invitation</p>
       
       <!-- Dynamic guest personalized name from URL ?guest=Name -->
       <div id="envelope-guest-name" class="envelope-guest-badge">Cordially Invited: Honored Guest</div>
       
-      <h1 class="envelope-couples-names">Isabella &amp; Alexander</h1>
-      <p class="envelope-date">Saturday, December 19, 2026 &bull; Manila</p>
+      <h1 class="envelope-couples-names">Criscel &amp; Joseph</h1>
+      <p class="envelope-date">Tuesday, November 24, 2026 &bull; Tabaco City, Albay</p>
 
       <!-- Wax Seal Open Button -->
       <button id="enter-invitation-btn" class="wax-seal-btn" title="Click to open the invitation">
@@ -58,40 +56,39 @@
   </div>
 
   <!-- =========================================================================
-       STICKY NAVIGATION BAR
+       STICKY NAVIGATION BAR (Mobile-Friendly)
        ========================================================================= -->
   <header id="main-navbar" class="navbar">
     <div class="container">
-      <!-- Brand / Monogram -->
-      <a href="#home" class="nav-brand" title="Return to Top">
+      <!-- Brand Monogram -->
+      <a href="#home" class="nav-brand" title="Criscel & Joseph">
         <img src="assets/images/monogram.svg" alt="Monogram" class="nav-brand-monogram">
-        <span class="nav-brand-names">I &amp; A</span>
+        <span class="nav-brand-names">C &amp; J</span>
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav>
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#countdown" class="nav-link">Countdown</a></li>
           <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#details" class="nav-link">Details</a></li>
           <li><a href="#entourage" class="nav-link">Entourage</a></li>
           <li><a href="#program" class="nav-link">Program</a></li>
           <li><a href="#dresscode" class="nav-link">Dress Code</a></li>
-          <li><a href="#video" class="nav-link">Video</a></li>
           <li><a href="#rsvp" class="nav-link">RSVP</a></li>
           <li><a href="#gift" class="nav-link">Gift</a></li>
         </ul>
       </nav>
 
-      <!-- Nav Actions: Music & RSVP Button -->
+      <!-- Nav Actions: Music & RSVP Button & Hamburger -->
       <div class="nav-actions">
         <!-- Background Music Button -->
         <button id="nav-music-toggle" class="nav-music-btn" title="Toggle Wedding Music">
           <i class="fa-solid fa-music"></i>
         </button>
 
-        <a href="#rsvp" class="btn btn-gold nav-rsvp-btn">RSVP Now</a>
+        <a href="#rsvp" class="btn btn-gold" style="padding: 0.55rem 1.2rem; font-size: 0.75rem;">RSVP</a>
 
         <!-- Mobile Hamburger Toggle -->
         <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
@@ -108,14 +105,13 @@
   <aside id="mobile-nav-drawer" class="mobile-nav-drawer">
     <ul class="mobile-nav-links">
       <li><a href="#home" class="mobile-nav-link active"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
-      <li><a href="#story" class="mobile-nav-link"><i class="fa-solid fa-heart"></i> Our Story</a></li>
+      <li><a href="#countdown" class="mobile-nav-link"><i class="fa-solid fa-hourglass-half"></i> Countdown</a></li>
       <li><a href="#gallery" class="mobile-nav-link"><i class="fa-solid fa-images"></i> Photo Gallery</a></li>
       <li><a href="#details" class="mobile-nav-link"><i class="fa-solid fa-church"></i> Wedding Details</a></li>
       <li><a href="#entourage" class="mobile-nav-link"><i class="fa-solid fa-users"></i> Entourage</a></li>
       <li><a href="#program" class="mobile-nav-link"><i class="fa-solid fa-calendar-day"></i> Wedding Program</a></li>
       <li><a href="#dresscode" class="mobile-nav-link"><i class="fa-solid fa-vest-patches"></i> Dress Code</a></li>
-      <li><a href="#video" class="mobile-nav-link"><i class="fa-solid fa-film"></i> Prenup Film</a></li>
-      <li><a href="#rsvp" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> RSVP</a></li>
+      <li><a href="#rsvp" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> RSVP Form</a></li>
       <li><a href="#gift" class="mobile-nav-link"><i class="fa-solid fa-gift"></i> Gift Registry</a></li>
     </ul>
     <a href="#rsvp" class="btn btn-gold" style="width: 100%; text-align: center;">Confirm Attendance</a>
@@ -123,7 +119,8 @@
 
   <main>
     <!-- =======================================================================
-         SECTION 2: HERO SECTION – WEDDING COVER
+         HERO SECTION – WEDDING COVER
+         Clean, elegant cover without invitation text, buttons, or scroll down
          ======================================================================= -->
     <section id="home" class="hero-section">
       <!-- 4 Corner Floral Ornaments -->
@@ -133,50 +130,45 @@
       <img src="assets/images/floral-corner.svg" alt="Floral Corner" class="floral-corner floral-corner-br">
 
       <div class="hero-inner-frame">
+        <!-- Optional personalized greeting if ?guest=Name in URL -->
+        <div id="guest-personal-greeting" class="guest-greeting-pill"></div>
+
         <p class="hero-subtitle-top">Together with our families</p>
         <h2 class="hero-married-title">WE ARE GETTING MARRIED!</h2>
 
         <!-- Couple Names -->
         <h1 class="hero-couples-names">
-          Isabella Marie Santos
+          Criscel
           <span class="hero-ampersand">&amp;</span>
-          Alexander James Ramos
+          Joseph
         </h1>
 
+        <!-- Sacred Invitation Message -->
         <p class="hero-invitation-message">
           "Together with love, we invite you to celebrate our special day as we unite in the holy sacrament of matrimony."
         </p>
 
-        <!-- Wedding Date Badge -->
+        <!-- Date & Venue Summary Badge -->
         <div class="hero-date-badge">
-          <i class="fa-regular fa-calendar-check" style="color: var(--color-gold-bright);"></i>
-          <span>Saturday, December 19, 2026</span>
+          <span class="date-main">Tuesday, November 24, 2026</span>
+          <span class="date-sub">St. Anthony of Padua Parish &bull; Tabaco City, Albay</span>
         </div>
 
-        <!-- Buttons -->
+        <!-- RSVP Today Button -->
         <div class="hero-btn-group">
-          <a href="#story" id="hero-enter-btn" class="btn btn-gold gold-shimmer">
-            <i class="fa-solid fa-feather-pointed"></i> Enter Invitation
-          </a>
-          <a href="#rsvp" class="btn btn-outline-gold">
-            <i class="fa-regular fa-envelope"></i> RSVP Today
+          <a href="#rsvp" class="btn btn-gold gold-shimmer">
+            <i class="fa-solid fa-envelope"></i> RSVP Today
           </a>
         </div>
       </div>
-
-      <!-- Scroll Hint -->
-      <a href="#countdown" class="scroll-down-hint">
-        <span>Scroll Down</span>
-        <i class="fa-solid fa-chevron-down"></i>
-      </a>
     </section>
 
     <!-- =======================================================================
-         SECTION 3: WEDDING COUNTDOWN TIMER
+         WEDDING COUNTDOWN TIMER
          ======================================================================= -->
     <section id="countdown" class="countdown-section">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 2.5rem;">
+        <div class="section-header" style="margin-bottom: 2rem;">
           <span class="section-subtitle">Counting Down to Forever</span>
           <h2 class="section-title light">The Wedding Countdown</h2>
           <div class="section-divider">
@@ -204,128 +196,36 @@
           </div>
         </div>
 
-        <!-- Ended Message (Shown when countdown hits zero) -->
+        <!-- Message shown when countdown reaches zero -->
         <div id="countdown-ended" class="countdown-ended-message">
           <i class="fa-solid fa-ring"></i> TODAY IS THE DAY! <i class="fa-solid fa-heart"></i>
         </div>
 
         <!-- Quick Calendar Sync -->
         <div class="countdown-actions">
-          <a id="add-gcal-btn" href="#" class="btn btn-outline-gold" style="font-size: 0.8rem; padding: 0.7rem 1.8rem;">
-            <i class="fa-brands fa-google"></i> Add to Google Calendar
+          <a id="add-gcal-btn" href="#" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.4rem;">
+            <i class="fa-brands fa-google"></i> Add to Calendar
           </a>
-          <button id="add-ical-btn" class="btn btn-outline-gold" style="font-size: 0.8rem; padding: 0.7rem 1.8rem;">
-            <i class="fa-brands fa-apple"></i> Download Apple/Outlook (.ics)
+          <button id="add-ical-btn" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.4rem;">
+            <i class="fa-brands fa-apple"></i> Save (.ics)
           </button>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         SECTION 4: OUR LOVE STORY (Timeline)
-         ======================================================================= -->
-    <section id="story" class="section-padding story-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">A Love Written in the Stars</span>
-          <h2 class="section-title">Our Love Story</h2>
-          <div class="section-divider">
-            <img src="assets/images/floral-divider.svg" alt="Floral Divider">
-          </div>
-          <p class="section-description">
-            Every love story is beautiful, but ours is our absolute favorite. Here are the unforgettable milestones that brought us to forever.
-          </p>
-        </div>
-
-        <div class="story-timeline">
-          <!-- Milestone 1: How We Met -->
-          <div class="story-item">
-            <div class="story-content">
-              <span class="story-date-badge">October 14, 2018</span>
-              <h3 class="story-heading">How We Met</h3>
-              <p class="story-text">
-                It began unexpectedly on a quiet, rainy Sunday afternoon at a quaint neighborhood bookstore café. A shared laughter over an accidental table mix-up sparked a conversation that turned hours into minutes. We both left knowing that something truly extraordinary had begun.
-              </p>
-            </div>
-            <div class="story-node">
-              <i class="fa-solid fa-mug-hot"></i>
-            </div>
-            <div class="story-media">
-              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80" 
-                   alt="How We Met" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
-            </div>
-          </div>
-
-          <!-- Milestone 2: Our First Date -->
-          <div class="story-item">
-            <div class="story-content">
-              <span class="story-date-badge">November 03, 2018</span>
-              <h3 class="story-heading">Our First Date</h3>
-              <p class="story-text">
-                Our first official date took us to the historic streets of Old Manila, followed by a romantic seaside dinner as the sun painted the sky in shades of warm gold and deep burgundy. Walking hand in hand under the city lights, we realized our souls were meant to journey together.
-              </p>
-            </div>
-            <div class="story-node">
-              <i class="fa-solid fa-utensils"></i>
-            </div>
-            <div class="story-media">
-              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" 
-                   alt="Our First Date" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
-            </div>
-          </div>
-
-          <!-- Milestone 3: The Proposal -->
-          <div class="story-item">
-            <div class="story-content">
-              <span class="story-date-badge">February 14, 2025</span>
-              <h3 class="story-heading">The Proposal</h3>
-              <p class="story-text">
-                At sunset overlooking the rolling hills of Tagaytay, surrounded by hundreds of deep red burgundy roses, fairy lights, and our favorite melody playing softly, Alexander bent on one knee and asked the question that would change our lives forever. Through tears of joy, Isabella said "Yes!"
-              </p>
-            </div>
-            <div class="story-node">
-              <i class="fa-solid fa-ring"></i>
-            </div>
-            <div class="story-media">
-              <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80" 
-                   alt="The Proposal" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
-            </div>
-          </div>
-
-          <!-- Milestone 4: Our Journey Together -->
-          <div class="story-item">
-            <div class="story-content">
-              <span class="story-date-badge">December 19, 2026</span>
-              <h3 class="story-heading">Our Journey Together</h3>
-              <p class="story-text">
-                Eight years of shared dreams, laughter, overcoming life's adventures, and endless love have led us to this sacred moment. We cannot wait to stand before God, our families, and dearest friends to promise forever.
-              </p>
-            </div>
-            <div class="story-node">
-              <i class="fa-solid fa-dove"></i>
-            </div>
-            <div class="story-media">
-              <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=800&q=80" 
-                   alt="Our Journey Together" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         SECTION 5: PRENUPTIAL PHOTOS / PHOTO GALLERY
+         PRENUPTIAL PHOTOS / PHOTO GALLERY
          ======================================================================= -->
     <section id="gallery" class="section-padding gallery-section">
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle">Moments Captured in Love</span>
-          <h2 class="section-title">Prenuptial Gallery</h2>
+          <h2 class="section-title">Photo Gallery</h2>
           <div class="section-divider">
             <img src="assets/images/floral-divider.svg" alt="Floral Divider">
           </div>
           <p class="section-description">
-            A glimpse into our prenuptial journey. Click any photograph to view in high resolution.
+            A glimpse into our prenuptial journey. Tap any photograph to enlarge in high resolution.
           </p>
         </div>
 
@@ -333,8 +233,8 @@
         <div class="gallery-filters">
           <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
           <button class="gallery-filter-btn" data-filter="prenup">The Prenup</button>
-          <button class="gallery-filter-btn" data-filter="romantic">Romantic Moments</button>
-          <button class="gallery-filter-btn" data-filter="details">Wedding Details</button>
+          <button class="gallery-filter-btn" data-filter="romantic">Romantic</button>
+          <button class="gallery-filter-btn" data-filter="details">Details</button>
         </div>
 
         <!-- Photo Grid -->
@@ -357,7 +257,7 @@
             <div class="gallery-overlay">
               <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
               <h4 class="gallery-overlay-title">Sunset Romance</h4>
-              <span class="gallery-overlay-tag">Romantic Moments</span>
+              <span class="gallery-overlay-tag">Romantic</span>
             </div>
           </div>
 
@@ -368,62 +268,40 @@
             <div class="gallery-overlay">
               <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
               <h4 class="gallery-overlay-title">Burgundy Bouquet</h4>
-              <span class="gallery-overlay-tag">Wedding Details</span>
+              <span class="gallery-overlay-tag">Details</span>
             </div>
           </div>
 
-          <!-- Photo 4 (Wide) -->
-          <div class="gallery-item wide" data-category="romantic">
-            <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1200&q=85" 
+          <!-- Photo 4 -->
+          <div class="gallery-item" data-category="romantic">
+            <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=85" 
                  alt="Intimate Vows" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
             <div class="gallery-overlay">
               <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
               <h4 class="gallery-overlay-title">Whispered Promises</h4>
-              <span class="gallery-overlay-tag">Romantic Moments</span>
+              <span class="gallery-overlay-tag">Romantic</span>
             </div>
           </div>
 
           <!-- Photo 5 -->
           <div class="gallery-item" data-category="details">
             <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=85" 
-                 alt="Champagne Gold Wedding Rings" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
+                 alt="Wedding Rings" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
             <div class="gallery-overlay">
               <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
               <h4 class="gallery-overlay-title">The Wedding Bands</h4>
-              <span class="gallery-overlay-tag">Wedding Details</span>
+              <span class="gallery-overlay-tag">Details</span>
             </div>
           </div>
 
           <!-- Photo 6 -->
           <div class="gallery-item" data-category="prenup">
             <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=85" 
-                 alt="Cathedral Veil Portrait" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
+                 alt="The Bridal Veil" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
             <div class="gallery-overlay">
               <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
               <h4 class="gallery-overlay-title">The Bridal Veil</h4>
               <span class="gallery-overlay-tag">The Prenup</span>
-            </div>
-          </div>
-
-          <!-- Photo 7 -->
-          <div class="gallery-item" data-category="romantic">
-            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=85" 
-                 alt="Garden Walk Together" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              <h4 class="gallery-overlay-title">A Walk in the Gardens</h4>
-              <span class="gallery-overlay-tag">Romantic Moments</span>
-            </div>
-          </div>
-
-          <!-- Photo 8 -->
-          <div class="gallery-item" data-category="details">
-            <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=85" 
-                 alt="Burgundy & Candlelight Reception" onerror="this.onerror=null; this.src='assets/images/placeholder.svg';">
-            <div class="gallery-overlay">
-              <div class="gallery-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              <h4 class="gallery-overlay-title">Candlelit Ambiance</h4>
-              <span class="gallery-overlay-tag">Wedding Details</span>
             </div>
           </div>
         </div>
@@ -443,16 +321,16 @@
       </button>
 
       <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="Enlarged Wedding Photo" class="lightbox-img">
+        <img id="lightbox-img" src="" alt="Enlarged Photo" class="lightbox-img">
         <div class="lightbox-caption-bar">
           <h3 id="lightbox-title" class="lightbox-title">Photo Title</h3>
-          <span id="lightbox-counter" class="lightbox-counter">1 / 8</span>
+          <span id="lightbox-counter" class="lightbox-counter">1 / 6</span>
         </div>
       </div>
     </div>
 
     <!-- =======================================================================
-         SECTION 6: WEDDING DETAILS (Ceremony & Reception)
+         WEDDING DETAILS (Ceremony & Reception in Tabaco City, Albay)
          ======================================================================= -->
     <section id="details" class="section-padding details-section">
       <div class="container">
@@ -463,89 +341,87 @@
             <img src="assets/images/floral-divider.svg" alt="Gold Divider">
           </div>
           <p class="section-description light">
-            We eagerly look forward to your presence at our solemn ceremony and joyous celebration.
+            We eagerly look forward to celebrating our special day with you in Tabaco City, Albay.
           </p>
         </div>
 
         <div class="details-grid">
-          <!-- Card 1: Wedding Ceremony -->
+          <!-- Card 1: Ceremony -->
           <div class="detail-card">
             <div class="detail-icon-wrap">
               <i class="fa-solid fa-church"></i>
             </div>
-            <span class="detail-card-badge">Holy Matrimony</span>
+            <span class="detail-card-badge">Holy Nuptial Mass</span>
             <h3 class="detail-venue-name">Wedding Ceremony</h3>
 
             <ul class="detail-info-list">
               <li class="detail-info-item">
                 <i class="fa-solid fa-place-of-worship"></i>
-                <strong>San Agustin Church</strong>
-              </li>
-              <li class="detail-info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>General Luna St, Intramuros, Manila, 1002 Metro Manila</span>
+                <div>
+                  <strong>St. Anthony of Padua Parish</strong><br>
+                  <span>San Antonio, Tabaco City, Albay</span>
+                </div>
               </li>
               <li class="detail-info-item">
                 <i class="fa-regular fa-calendar-check"></i>
-                <span>Saturday, December 19, 2026</span>
+                <span>Tuesday, November 24, 2026</span>
               </li>
               <li class="detail-info-item">
                 <i class="fa-regular fa-clock"></i>
-                <span>3:00 PM (Guests seated by 2:30 PM)</span>
+                <span>2:00 PM (Guests seated by 1:30 PM)</span>
               </li>
             </ul>
 
-            <!-- Google Map Embed -->
+            <!-- Google Map Embed: St. Anthony of Padua Parish, San Antonio, Tabaco City -->
             <div class="detail-map-embed">
               <iframe 
-                title="San Agustin Church Map"
-                src="https://maps.google.com/maps?q=San+Agustin+Church+Intramuros+Manila&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="St. Anthony of Padua Parish Map"
+                src="https://maps.google.com/maps?q=St.+Anthony+of+Padua+Parish+San+Antonio+Tabaco+City+Albay&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 loading="lazy">
               </iframe>
             </div>
 
-            <a href="https://maps.google.com/?q=San+Agustin+Church+Intramuros+Manila" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <a href="https://maps.google.com/?q=St.+Anthony+of+Padua+Parish+San+Antonio+Tabaco+City+Albay" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
               <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
             </a>
           </div>
 
-          <!-- Card 2: Wedding Reception -->
+          <!-- Card 2: Reception -->
           <div class="detail-card">
             <div class="detail-icon-wrap">
               <i class="fa-solid fa-champagne-glasses"></i>
             </div>
-            <span class="detail-card-badge">Dinner &amp; Party</span>
+            <span class="detail-card-badge">Dinner &amp; Celebration</span>
             <h3 class="detail-venue-name">Wedding Reception</h3>
 
             <ul class="detail-info-list">
               <li class="detail-info-item">
                 <i class="fa-solid fa-hotel"></i>
-                <strong>The Glasshouse Garden Estate</strong>
-              </li>
-              <li class="detail-info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>95 Roxas Blvd, Tambo, Parañaque, 1701 Metro Manila</span>
+                <div>
+                  <strong>Jamaica Mansions Subdivision</strong><br>
+                  <span>Panal, Tabaco City, Albay</span>
+                </div>
               </li>
               <li class="detail-info-item">
                 <i class="fa-regular fa-calendar-check"></i>
-                <span>Saturday, December 19, 2026</span>
+                <span>Tuesday, November 24, 2026</span>
               </li>
               <li class="detail-info-item">
                 <i class="fa-regular fa-clock"></i>
-                <span>5:30 PM Onwards (Cocktails &amp; Dinner)</span>
+                <span>Following Ceremony (Cocktails &amp; Dinner)</span>
               </li>
             </ul>
 
-            <!-- Google Map Embed -->
+            <!-- Google Map Embed: Jamaica Mansions Subdivision, Panal, Tabaco City -->
             <div class="detail-map-embed">
               <iframe 
-                title="The Glasshouse Garden Estate Map"
-                src="https://maps.google.com/maps?q=95+Roxas+Blvd+Tambo+Paranaque&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Jamaica Mansions Subdivision Map"
+                src="https://maps.google.com/maps?q=Jamaica+Mansions+Subdivision+Panal+Tabaco+City+Albay&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 loading="lazy">
               </iframe>
             </div>
 
-            <a href="https://maps.google.com/?q=95+Roxas+Blvd+Tambo+Paranaque" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <a href="https://maps.google.com/?q=Jamaica+Mansions+Subdivision+Panal+Tabaco+City+Albay" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
               <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
             </a>
           </div>
@@ -554,123 +430,183 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 7: WEDDING ENTOURAGE
+         WEDDING ENTOURAGE (Dio and Boncolmo Entourage)
          ======================================================================= -->
     <section id="entourage" class="section-padding entourage-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-subtitle">Our Beloved Circle of Support</span>
+          <span class="section-subtitle">Dio and Boncolmo Entourage</span>
           <h2 class="section-title">The Wedding Entourage</h2>
           <div class="section-divider">
             <img src="assets/images/floral-divider.svg" alt="Floral Divider">
           </div>
           <p class="section-description">
-            The extraordinary people who stood by us, guided our steps, and share this sacred celebration with us.
+            Our beloved family and cherished friends who stand with us as we exchange sacred vows.
           </p>
         </div>
 
         <div class="entourage-grid">
-          <!-- Parents of Bride & Groom -->
-          <div class="entourage-group">
-            <span class="entourage-role-badge">Parents of the Bride</span>
-            <div class="entourage-names-list">
-              <p class="entourage-name-item">Mr. Eduardo Miguel Santos <span>Father</span></p>
-              <p class="entourage-name-item">Mrs. Carmen Theresa Santos <span>Mother</span></p>
-            </div>
-          </div>
-
+          <!-- Parents of Groom & Bride -->
           <div class="entourage-group">
             <span class="entourage-role-badge">Parents of the Groom</span>
             <div class="entourage-names-list">
-              <p class="entourage-name-item">Mr. Ricardo David Ramos <span>Father</span></p>
-              <p class="entourage-name-item">Mrs. Elizabeth Ann Ramos <span>Mother</span></p>
+              <p class="entourage-name-item">Nestor Larot</p>
+              <p class="entourage-name-item">Natividad Larot</p>
             </div>
           </div>
 
-          <!-- Principal Sponsors (Full Width) -->
-          <div class="entourage-group full-width">
-            <span class="entourage-role-badge">Principal Sponsors (Ninongs &amp; Ninangs)</span>
-            <div class="sponsors-columns">
-              <div class="entourage-names-list">
-                <p class="entourage-name-item">Hon. Roberto S. Alcantara</p>
-                <p class="entourage-name-item">Atty. Manuel C. Gonzales</p>
-                <p class="entourage-name-item">Dr. Fernando G. Reyes</p>
-                <p class="entourage-name-item">Engr. Vicente L. Mendoza</p>
-                <p class="entourage-name-item">Mr. Antonio J. De la Cruz</p>
-              </div>
-              <div class="entourage-names-list">
-                <p class="entourage-name-item">Dr. Maria Elena Alcantara</p>
-                <p class="entourage-name-item">Mrs. Victoria T. Gonzales</p>
-                <p class="entourage-name-item">Mrs. Cynthia P. Reyes</p>
-                <p class="entourage-name-item">Mrs. Remedios B. Mendoza</p>
-                <p class="entourage-name-item">Mrs. Rosalinda M. De la Cruz</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Maid of Honor & Best Man -->
           <div class="entourage-group">
-            <span class="entourage-role-badge">Maid of Honor</span>
+            <span class="entourage-role-badge">Parents of the Bride</span>
             <div class="entourage-names-list">
-              <p class="entourage-name-item">Camille Victoria Santos <span>Sister of the Bride</span></p>
+              <p class="entourage-name-item">Domingo Boncolmo</p>
+              <p class="entourage-name-item">Grace Burce</p>
             </div>
           </div>
 
+          <!-- Principal Sponsors (Ninongs & Ninangs) -->
+          <div class="entourage-group full-width">
+            <span class="entourage-role-badge">Principal Sponsors</span>
+            <div class="sponsors-paired-grid">
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Romeo Bidol</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Priscila Box</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Ronald Barcebal</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Vivian Dagsil</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Jonathan Arias</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Hilda Borlasa</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Domingo Cadag</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Anabeth Bilangel</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Umay Ilano</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Salvacion Buenaflor</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Efren Bonsa</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Jenny Mae Bio</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Augusto Bordeos</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Rosemarie Borlagdan</div>
+              </div>
+              <div class="sponsor-pair">
+                <div class="sponsor-ninong">Jose Volante</div>
+                <span class="sponsor-label">&amp;</span>
+                <div class="sponsor-ninang">Venus Basaysay</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Best Man & Maid of Honor -->
           <div class="entourage-group">
             <span class="entourage-role-badge">Best Man</span>
             <div class="entourage-names-list">
-              <p class="entourage-name-item">Julian Matthew Ramos <span>Brother of the Groom</span></p>
-            </div>
-          </div>
-
-          <!-- Bridesmaids & Groomsmen -->
-          <div class="entourage-group">
-            <span class="entourage-role-badge">Bridesmaids</span>
-            <div class="entourage-names-list">
-              <p class="entourage-name-item">Sophia Grace Lim</p>
-              <p class="entourage-name-item">Chloe Beatriz Navarro</p>
-              <p class="entourage-name-item">Patricia Anne Valdez</p>
-              <p class="entourage-name-item">Alyssa Marie Fernandez</p>
+              <p class="entourage-name-item">Arthur Larot</p>
             </div>
           </div>
 
           <div class="entourage-group">
-            <span class="entourage-role-badge">Groomsmen</span>
+            <span class="entourage-role-badge">Maid of Honor</span>
             <div class="entourage-names-list">
-              <p class="entourage-name-item">Marco Antonio Diaz</p>
-              <p class="entourage-name-item">Gabriel Joseph Tan</p>
-              <p class="entourage-name-item">Christian Dave Mercado</p>
-              <p class="entourage-name-item">Angelo Gabriel Cruz</p>
+              <p class="entourage-name-item">Lovely Boncolmo</p>
             </div>
           </div>
 
           <!-- Secondary Sponsors -->
           <div class="entourage-group full-width">
             <span class="entourage-role-badge">Secondary Sponsors</span>
-            <div class="sponsors-columns">
-              <div class="entourage-names-list">
-                <p class="entourage-name-item">Candle Sponsors <span>To Enlighten Our Path</span></p>
-                <p class="entourage-name-item" style="font-size: 1rem; color: var(--color-text-muted);">
-                  Juan Carlos Santos &bull; Maria Luisa Ramos
-                </p>
-                <br>
-                <p class="entourage-name-item">Veil Sponsors <span>To Clothe Us in Love</span></p>
-                <p class="entourage-name-item" style="font-size: 1rem; color: var(--color-text-muted);">
-                  Patrick James Lim &bull; Katrina Rose Perez
-                </p>
+            <div class="sponsors-paired-grid" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="sponsor-pair">
+                <span class="sponsor-label" style="font-weight: 700; color: var(--color-burgundy-deep);">Candle Sponsors</span>
+                <div class="sponsor-ninong">Kenneth Ceriola</div>
+                <div class="sponsor-ninang">Jessa Camposano</div>
               </div>
-              <div class="entourage-names-list">
-                <p class="entourage-name-item">Cord Sponsors <span>To Bind Us in Unity</span></p>
-                <p class="entourage-name-item" style="font-size: 1rem; color: var(--color-text-muted);">
-                  Dominic Paul Castro &bull; Stephanie Nicole Sy
-                </p>
-                <br>
-                <p class="entourage-name-item">Bearers &amp; Flower Girls <span>Our Little Angels</span></p>
-                <p class="entourage-name-item" style="font-size: 1rem; color: var(--color-text-muted);">
-                  Ring Bearer: Lucas Nathan Ramos &bull; Coin Bearer: Ethan James Santos<br>
-                  Bible Bearer: Noah Daniel Cruz &bull; Flower Girls: Mia &amp; Emma Lim
-                </p>
+              <div class="sponsor-pair">
+                <span class="sponsor-label" style="font-weight: 700; color: var(--color-burgundy-deep);">Veil Sponsors</span>
+                <div class="sponsor-ninong">Jumello Barcela</div>
+                <div class="sponsor-ninang">Angie Burce</div>
               </div>
+              <div class="sponsor-pair">
+                <span class="sponsor-label" style="font-weight: 700; color: var(--color-burgundy-deep);">Cord Sponsors</span>
+                <div class="sponsor-ninong">Aljon Grivialde</div>
+                <div class="sponsor-ninang">Jonna Mae Burce</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Groomsmen & Bridesmaids -->
+          <div class="entourage-group">
+            <span class="entourage-role-badge">Groomsmen</span>
+            <div class="entourage-names-list">
+              <p class="entourage-name-item">Randy Torres</p>
+              <p class="entourage-name-item">Oliver Aivan Borlagdan</p>
+              <p class="entourage-name-item">Ejay Boncolmo</p>
+              <p class="entourage-name-item">Nhygel Hanz Vasquez</p>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="entourage-role-badge">Bridesmaids</span>
+            <div class="entourage-names-list">
+              <p class="entourage-name-item">Maricar Boncacas</p>
+              <p class="entourage-name-item">Julie Ann Boncolmo</p>
+              <p class="entourage-name-item">Mae Annely Borlasa</p>
+              <p class="entourage-name-item">Princess Borlasa</p>
+            </div>
+          </div>
+
+          <!-- Bearers -->
+          <div class="entourage-group full-width">
+            <span class="entourage-role-badge">Bearers</span>
+            <div class="sponsors-paired-grid" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="sponsor-pair">
+                <span class="sponsor-label" style="font-weight: 700; color: var(--color-burgundy-deep);">Ring Bearers</span>
+                <p class="entourage-name-item" style="font-size: 0.98rem;">Sam Boncolmo</p>
+                <p class="entourage-name-item" style="font-size: 0.98rem;">Kate Allyson Buella</p>
+              </div>
+              <div class="sponsor-pair">
+                <span class="sponsor-label" style="font-weight: 700; color: var(--color-burgundy-deep);">Coin Bearers</span>
+                <p class="entourage-name-item" style="font-size: 0.98rem;">Calvin Ezekiel Borlasa</p>
+                <p class="entourage-name-item" style="font-size: 0.98rem;">Maeden Vionna Dacer</p>
+              </div>
+              <div class="sponsor-pair">
+                <span class="sponsor-label" style="font-weight: 700; color: var(--color-burgundy-deep);">Bible Bearers</span>
+                <p class="entourage-name-item" style="font-size: 0.98rem;">Gian Louise Desuyo</p>
+                <p class="entourage-name-item" style="font-size: 0.98rem;">Cassandra Azea Bocalig</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flower Girls & Offering -->
+          <div class="entourage-group">
+            <span class="entourage-role-badge">Flower Girls</span>
+            <div class="entourage-names-list">
+              <p class="entourage-name-item">Steven Boncolmo</p>
+              <p class="entourage-name-item">Brianna Zsathalia Borlasa</p>
+              <p class="entourage-name-item">Joenard Boncolmo</p>
+              <p class="entourage-name-item">Klaire Tiffany Bristol</p>
+            </div>
+          </div>
+
+          <div class="entourage-group">
+            <span class="entourage-role-badge">Offering</span>
+            <div class="entourage-names-list">
+              <p class="entourage-name-item">John Dave Boncolmo &bull; Maria Bolilan</p>
+              <p class="entourage-name-item">Juren Buragay &bull; Maritess Bilangel</p>
+              <p class="entourage-name-item">Bryan Mars Desuyo &bull; Sandra Bonaobra</p>
             </div>
           </div>
         </div>
@@ -678,99 +614,82 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 8: WEDDING PROGRAM / SCHEDULE
+         WEDDING PROGRAM / SCHEDULE
          ======================================================================= -->
     <section id="program" class="section-padding program-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-subtitle">The Order of Events</span>
+          <span class="section-subtitle">Order of Events</span>
           <h2 class="section-title">Wedding Program</h2>
           <div class="section-divider">
             <img src="assets/images/floral-divider.svg" alt="Floral Divider">
           </div>
           <p class="section-description">
-            A guide to our celebration. We invite you to be present and share in every treasured moment.
+            A guide to our celebration day. We invite you to share each precious moment with us.
           </p>
         </div>
 
         <div class="program-timeline">
-          <!-- 1 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-door-open"></i></div>
             <div class="program-card">
-              <div class="program-time">02:30 PM</div>
+              <div class="program-time">01:30 PM</div>
               <h3 class="program-title">Guest Arrival &amp; Seating</h3>
-              <p class="program-desc">Guests are welcomed at San Agustin Church with acoustic violin and cello prelude.</p>
+              <p class="program-desc">Welcoming of guests at St. Anthony of Padua Parish, San Antonio, Tabaco City.</p>
             </div>
           </div>
 
-          <!-- 2 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-church"></i></div>
             <div class="program-card">
-              <div class="program-time">03:00 PM</div>
+              <div class="program-time">02:00 PM</div>
               <h3 class="program-title">Solemn Wedding Ceremony</h3>
-              <p class="program-desc">The bridal march, exchange of sacred wedding vows, and holy nuptial blessing.</p>
+              <p class="program-desc">The bridal march, sacred exchange of vows and rings, and nuptial blessing.</p>
             </div>
           </div>
 
-          <!-- 3 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-camera-retro"></i></div>
             <div class="program-card">
-              <div class="program-time">04:30 PM</div>
+              <div class="program-time">03:30 PM</div>
               <h3 class="program-title">Church Pictorials &amp; Send-Off</h3>
-              <p class="program-desc">Formal photographs with sponsors and family followed by flower petal shower send-off.</p>
+              <p class="program-desc">Formal photography with family and entourage followed by petal send-off.</p>
             </div>
           </div>
 
-          <!-- 4 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-martini-glass-citrus"></i></div>
             <div class="program-card">
-              <div class="program-time">05:30 PM</div>
-              <h3 class="program-title">Cocktail Hour &amp; Grazing</h3>
-              <p class="program-desc">Welcome canapés, signature wine, artisan cocktails, and guestbook signing at The Glasshouse.</p>
+              <div class="program-time">04:30 PM</div>
+              <h3 class="program-title">Cocktail Hour at Reception</h3>
+              <p class="program-desc">Welcome drinks and grazing table at Jamaica Mansions Subdivision, Panal, Tabaco City.</p>
             </div>
           </div>
 
-          <!-- 5 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-champagne-glasses"></i></div>
             <div class="program-card">
-              <div class="program-time">06:30 PM</div>
-              <h3 class="program-title">Grand Entrance of the Newlyweds</h3>
-              <p class="program-desc">Welcoming Mr. and Mrs. Ramos with applause and celebratory champagne toasts.</p>
+              <div class="program-time">05:30 PM</div>
+              <h3 class="program-title">Grand Entrance of Newlyweds</h3>
+              <p class="program-desc">Welcoming Mr. and Mrs. Larot with celebratory toasts and applause.</p>
             </div>
           </div>
 
-          <!-- 6 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-utensils"></i></div>
             <div class="program-card">
-              <div class="program-time">07:00 PM</div>
-              <h3 class="program-title">Dinner &amp; Speeches</h3>
-              <p class="program-desc">Gourmet dinner buffet accompanied by heartfelt toasts from parents and entourage.</p>
+              <div class="program-time">06:00 PM</div>
+              <h3 class="program-title">Dinner &amp; Heartfelt Speeches</h3>
+              <p class="program-desc">Celebratory dinner accompanied by messages from parents, sponsors, and entourage.</p>
             </div>
           </div>
 
-          <!-- 7 -->
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-music"></i></div>
             <div class="program-card">
-              <div class="program-time">08:00 PM</div>
-              <h3 class="program-title">First Dance &amp; Traditions</h3>
-              <p class="program-desc">The couple's romantic first dance, cake cutting ceremony, and bouquet toss.</p>
-            </div>
-          </div>
-
-          <!-- 8 -->
-          <div class="program-item">
-            <div class="program-icon-node"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <div class="program-card">
-              <div class="program-time">09:00 PM</div>
-              <h3 class="program-title">Party &amp; Sparkler Send-Off</h3>
-              <p class="program-desc">Open dance floor, DJ celebration, and nighttime sparkler farewell tunnel.</p>
+              <div class="program-time">07:00 PM</div>
+              <h3 class="program-title">First Dance &amp; Party</h3>
+              <p class="program-desc">The couple's romantic first dance, cake cutting ceremony, and open celebration.</p>
             </div>
           </div>
         </div>
@@ -778,7 +697,7 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 9: DRESS CODE
+         DRESS CODE
          ======================================================================= -->
     <section id="dresscode" class="section-padding dresscode-section">
       <div class="container">
@@ -797,65 +716,56 @@
         <div class="palette-container">
           <div class="palette-item">
             <div class="palette-swatch" style="background-color: #800020;"></div>
-            <span class="palette-name">Deep Burgundy</span>
-            <span class="palette-hex">#800020</span>
+            <span class="palette-name">Burgundy</span>
           </div>
           <div class="palette-item">
             <div class="palette-swatch" style="background-color: #4A001F;"></div>
             <span class="palette-name">Dark Wine</span>
-            <span class="palette-hex">#4A001F</span>
           </div>
           <div class="palette-item">
             <div class="palette-swatch" style="background-color: #D4AF7F;"></div>
-            <span class="palette-name">Champagne Gold</span>
-            <span class="palette-hex">#D4AF7F</span>
+            <span class="palette-name">Champagne</span>
           </div>
           <div class="palette-item">
             <div class="palette-swatch" style="background-color: #C08081;"></div>
             <span class="palette-name">Dusty Rose</span>
-            <span class="palette-hex">#C08081</span>
           </div>
           <div class="palette-item">
             <div class="palette-swatch" style="background-color: #F5EBDD;"></div>
-            <span class="palette-name">Warm Almond</span>
-            <span class="palette-hex">#F5EBDD</span>
+            <span class="palette-name">Soft Beige</span>
           </div>
           <div class="palette-item">
             <div class="palette-swatch" style="background-color: #2A151B;"></div>
-            <span class="palette-name">Classic Charcoal</span>
-            <span class="palette-hex">#2A151B</span>
+            <span class="palette-name">Charcoal</span>
           </div>
         </div>
 
         <!-- Attire Cards -->
         <div class="dresscode-cards-grid">
-          <!-- Card 1 -->
           <div class="dresscode-card">
             <div class="dresscode-icon"><i class="fa-solid fa-award"></i></div>
             <h3 class="dresscode-role-title">Principal Sponsors</h3>
             <p class="dresscode-details">
-              <strong>Ninongs:</strong> Formal Barong Tagalog or Black-Tie Tuxedo with dark trousers.<br><br>
-              <strong>Ninangs:</strong> Floor-length Burgundy or Champagne Gold formal evening gown.
+              <strong>Ninongs:</strong> Formal Barong Tagalog or Suit with dark trousers.<br><br>
+              <strong>Ninangs:</strong> Long Burgundy or Champagne Gold formal evening gown.
             </p>
           </div>
 
-          <!-- Card 2 -->
           <div class="dresscode-card">
             <div class="dresscode-icon"><i class="fa-solid fa-person-dress"></i></div>
             <h3 class="dresscode-role-title">Female Guests</h3>
             <p class="dresscode-details">
-              Formal or cocktail floor-length dresses in Burgundy, Wine, Rose, Champagne Gold, or Warm Beige.<br><br>
-              <em>Kindly note: White, ivory, and cream tones are strictly reserved for the bride.</em>
+              Formal or semi-formal dress in Burgundy, Wine, Champagne Gold, or Beige.<br><br>
+              <em>Note: White and cream dresses are reserved for the bride.</em>
             </p>
           </div>
 
-          <!-- Card 3 -->
           <div class="dresscode-card">
             <div class="dresscode-icon"><i class="fa-solid fa-user-tie"></i></div>
             <h3 class="dresscode-role-title">Male Guests</h3>
             <p class="dresscode-details">
-              Formal Barong Tagalog or tailored suit and tie with dark leather shoes.<br><br>
-              Burgundy or champagne pocket squares and neckties are encouraged.
+              Formal Barong Tagalog or tailored suit and tie with dark trousers.<br><br>
+              Burgundy or champagne accents are welcome.
             </p>
           </div>
         </div>
@@ -866,41 +776,14 @@
             "Your presence is our greatest gift. We kindly encourage our guests to wear our suggested wedding colors."
           </p>
           <span class="dresscode-sub-notice">
-            <i class="fa-solid fa-circle-info"></i> Please avoid casual wear such as t-shirts, shorts, sneakers, and slippers.
+            <i class="fa-solid fa-circle-info"></i> Please avoid casual wear such as t-shirts, shorts, slippers, or all-white attire.
           </span>
         </div>
       </div>
     </section>
 
     <!-- =======================================================================
-         SECTION 10: PRENUPTIAL VIDEO
-         ======================================================================= -->
-    <section id="video" class="section-padding video-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Cinema of Our Hearts</span>
-          <h2 class="section-title light">OUR PRENUP FILM</h2>
-          <div class="section-divider">
-            <img src="assets/images/floral-divider.svg" alt="Gold Divider">
-          </div>
-          <p class="section-description light">
-            A glimpse into our love story captured through the lens. Sit back, relax, and enjoy our prenup teaser.
-          </p>
-        </div>
-
-        <div class="video-container">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/5qap5aO4i9A?rel=0&modestbranding=1" 
-            title="Our Prenuptial Wedding Film" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- =======================================================================
-         SECTION 11: RSVP SECTION
+         RSVP SECTION (Embedded Google Form & Direct Link)
          ======================================================================= -->
     <section id="rsvp" class="section-padding rsvp-section">
       <div class="container">
@@ -911,110 +794,33 @@
             <img src="assets/images/floral-divider.svg" alt="Floral Divider">
           </div>
           <p class="section-description">
-            Please let us know if you can make it to our special celebration. We kindly request responses on or before the deadline.
+            Please confirm your attendance so we may reserve your seat. You can complete the form below or open it directly in Google Forms.
           </p>
         </div>
 
-        <div class="rsvp-card-wrapper">
-          <div class="rsvp-deadline-banner">
-            <i class="fa-solid fa-bell"></i> Kindly RSVP on or before <strong>November 15, 2026</strong>
+        <div class="rsvp-container-box">
+          <!-- Direct Google Form Action Button -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSSxDoGPlh1x8Yj_5s2AYNP6GotcGR0CI0ZDExOr06hC7Aiw/viewform" 
+             target="_blank" rel="noopener noreferrer" 
+             class="btn btn-burgundy gold-shimmer" style="width: 100%; max-width: 420px; margin: 0 auto 1.5rem;">
+            <i class="fa-brands fa-google"></i> Open RSVP in Google Forms
+          </a>
+
+          <!-- Embedded Google Form for seamless in-page mobile filling -->
+          <div class="rsvp-google-form-embed">
+            <iframe 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSfSSxDoGPlh1x8Yj_5s2AYNP6GotcGR0CI0ZDExOr06hC7Aiw/viewform?embedded=true" 
+              title="Criscel & Joseph Wedding RSVP Form"
+              loading="lazy">
+              Loading RSVP Form...
+            </iframe>
           </div>
-
-          <form id="wedding-rsvp-form" class="rsvp-form">
-            <!-- Guest Full Name -->
-            <div class="form-group">
-              <label for="guest-name" class="form-label">Guest Full Name <span class="required">*</span></label>
-              <input type="text" id="guest-name" name="guest_name" class="form-control" placeholder="e.g. Maria Santos" required>
-            </div>
-
-            <!-- Email & Phone -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="guest-email" class="form-label">Email Address <span class="required">*</span></label>
-                <input type="email" id="guest-email" name="guest_email" class="form-control" placeholder="yourname@example.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="guest-phone" class="form-label">Contact / Mobile Number <span class="required">*</span></label>
-                <input type="tel" id="guest-phone" name="guest_phone" class="form-control" placeholder="+63 917 123 4567" required>
-              </div>
-            </div>
-
-            <!-- Attendance Confirmation -->
-            <div class="form-group">
-              <label class="form-label">Attendance Confirmation <span class="required">*</span></label>
-              <div class="attendance-options">
-                <label class="attendance-option-label active">
-                  <input type="radio" name="attendance" id="attend-yes" value="yes" checked>
-                  <div>
-                    <strong style="color: var(--color-burgundy-deep); display: block;"><i class="fa-solid fa-check"></i> Joyfully Accepts</strong>
-                    <small style="color: var(--color-text-muted);">I will be thrilled to celebrate with you!</small>
-                  </div>
-                </label>
-
-                <label class="attendance-option-label">
-                  <input type="radio" name="attendance" id="attend-no" value="no">
-                  <div>
-                    <strong style="color: var(--color-wine-dark); display: block;"><i class="fa-solid fa-xmark"></i> Regretfully Declines</strong>
-                    <small style="color: var(--color-text-muted);">I will celebrate in spirit with you.</small>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            <!-- Conditional Additional Guests (Shown only when Yes) -->
-            <div id="additional-guests-fields">
-              <div class="form-group">
-                <label for="guest-count" class="form-label">Number of Guests Attending <span class="required">*</span></label>
-                <select id="guest-count" name="guest_count" class="form-control">
-                  <option value="1">1 Person (Just Me)</option>
-                  <option value="2">2 Persons</option>
-                  <option value="3">3 Persons</option>
-                  <option value="4">4 Persons</option>
-                  <option value="5">5 Persons (Family)</option>
-                </select>
-              </div>
-
-              <!-- Dynamic container for names of accompanying guests -->
-              <div id="dynamic-guest-names-container"></div>
-
-              <!-- Dietary / Meal Preferences -->
-              <div class="form-group">
-                <label for="dietary-preferences" class="form-label">Dietary Preferences or Allergies</label>
-                <input type="text" id="dietary-preferences" name="dietary" class="form-control" placeholder="e.g. Vegetarian, Nut Allergy, Halal, None">
-              </div>
-            </div>
-
-            <!-- Special Message -->
-            <div class="form-group">
-              <label for="guest-message" class="form-label">Special Message / Well Wishes for the Couple</label>
-              <textarea id="guest-message" name="message" rows="4" class="form-control" placeholder="Write your warm wishes, advice, or favorite memory with Isabella and Alexander..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-burgundy rsvp-submit-btn">
-              <i class="fa-solid fa-paper-plane"></i> Submit RSVP Response
-            </button>
-          </form>
         </div>
       </div>
     </section>
 
-    <!-- RSVP Submission Success Modal -->
-    <div id="rsvp-success-modal" class="rsvp-success-modal">
-      <div class="rsvp-success-card">
-        <div class="rsvp-success-icon"><i class="fa-solid fa-heart"></i></div>
-        <h3 class="rsvp-success-title">RSVP Received!</h3>
-        <p id="rsvp-summary-text" class="rsvp-success-message">
-          Thank you for confirming your attendance. Your response has been joyfully recorded!
-        </p>
-        <button id="rsvp-success-close-btn" class="btn btn-gold">
-          <i class="fa-solid fa-check"></i> Close
-        </button>
-      </div>
-    </div>
-
     <!-- =======================================================================
-         SECTION 12: GIFT REGISTRY / WISHING WELL
+         GIFT REGISTRY / WISHING WELL
          ======================================================================= -->
     <section id="gift" class="section-padding gift-section">
       <div class="container">
@@ -1024,7 +830,7 @@
           <div class="section-divider">
             <img src="assets/images/floral-divider.svg" alt="Gold Divider">
           </div>
-          <p class="section-description light" style="font-size: 1.15rem; font-style: italic;">
+          <p class="section-description light" style="font-size: 1.1rem; font-style: italic;">
             "Your presence at our wedding is the greatest gift we could ask for. However, should you wish to honor us with a gift, a monetary contribution would be greatly appreciated."
           </p>
         </div>
@@ -1035,23 +841,23 @@
             <div class="gift-card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
             <h3 class="gift-method-name">GCash</h3>
 
-            <!-- QR Code Preview Image -->
+            <!-- QR Code Preview -->
             <img src="assets/images/qr-gcash.svg" alt="GCash QR Code" class="gift-qr-preview view-qr-btn" 
                  data-qr-src="assets/images/qr-gcash.svg" data-qr-title="GCash QR Code">
 
             <div class="gift-account-info">
               <p class="gift-account-label">Account Name</p>
-              <p class="gift-account-val">ISABELLA SANTOS</p>
+              <p class="gift-account-val">CRISCEL BONCOLMO</p>
               <br>
               <p class="gift-account-label">Mobile Number</p>
               <p class="gift-account-val">0917 123 4567</p>
             </div>
 
             <div class="gift-action-btns">
-              <button class="btn btn-gold copy-btn" data-copy="09171234567" style="font-size: 0.8rem; padding: 0.65rem 1.4rem;">
+              <button class="btn btn-gold copy-btn" data-copy="09171234567" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
                 <i class="fa-regular fa-copy"></i> Copy Number
               </button>
-              <button class="btn btn-outline-gold view-qr-btn" data-qr-src="assets/images/qr-gcash.svg" data-qr-title="GCash QR Code" style="font-size: 0.8rem; padding: 0.65rem 1.4rem;">
+              <button class="btn btn-outline-gold view-qr-btn" data-qr-src="assets/images/qr-gcash.svg" data-qr-title="GCash QR Code" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
                 <i class="fa-solid fa-qrcode"></i> View QR
               </button>
             </div>
@@ -1060,25 +866,25 @@
           <!-- Bank Transfer Card -->
           <div class="gift-card">
             <div class="gift-card-icon"><i class="fa-solid fa-building-columns"></i></div>
-            <h3 class="gift-method-name">Bank Transfer (BPI)</h3>
+            <h3 class="gift-method-name">Bank Transfer</h3>
 
-            <!-- QR Code Preview Image -->
-            <img src="assets/images/qr-bank.svg" alt="BPI Bank QR Code" class="gift-qr-preview view-qr-btn" 
-                 data-qr-src="assets/images/qr-bank.svg" data-qr-title="BPI Bank QR Code">
+            <!-- QR Code Preview -->
+            <img src="assets/images/qr-bank.svg" alt="Bank QR Code" class="gift-qr-preview view-qr-btn" 
+                 data-qr-src="assets/images/qr-bank.svg" data-qr-title="Bank Transfer QR">
 
             <div class="gift-account-info">
               <p class="gift-account-label">Bank &amp; Account Name</p>
-              <p class="gift-account-val">BPI &bull; ALEXANDER RAMOS</p>
+              <p class="gift-account-val">JOSEPH LAROT</p>
               <br>
               <p class="gift-account-label">Account Number</p>
               <p class="gift-account-val">1234 5678 90</p>
             </div>
 
             <div class="gift-action-btns">
-              <button class="btn btn-gold copy-btn" data-copy="1234567890" style="font-size: 0.8rem; padding: 0.65rem 1.4rem;">
+              <button class="btn btn-gold copy-btn" data-copy="1234567890" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
                 <i class="fa-regular fa-copy"></i> Copy Account
               </button>
-              <button class="btn btn-outline-gold view-qr-btn" data-qr-src="assets/images/qr-bank.svg" data-qr-title="BPI Bank QR Code" style="font-size: 0.8rem; padding: 0.65rem 1.4rem;">
+              <button class="btn btn-outline-gold view-qr-btn" data-qr-src="assets/images/qr-bank.svg" data-qr-title="Bank Transfer QR" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
                 <i class="fa-solid fa-qrcode"></i> View QR
               </button>
             </div>
@@ -1092,11 +898,11 @@
       <button id="qr-modal-close-btn" class="lightbox-close-btn" aria-label="Close QR Modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="lightbox-content" style="max-width: 420px; text-align: center;">
-        <h3 id="qr-modal-title" class="lightbox-title" style="margin-bottom: 1.2rem;">QR Code</h3>
-        <img id="qr-modal-img" src="" alt="Full QR Code" style="background: #fff; padding: 12px; border-radius: 12px; width: 100%; max-width: 320px; margin: 0 auto 1.5rem; border: 2px solid var(--color-gold-champagne);">
-        <a id="qr-download-btn" href="#" download class="btn btn-gold" style="font-size: 0.85rem;">
-          <i class="fa-solid fa-download"></i> Save / Download QR Code
+      <div class="lightbox-content" style="max-width: 380px; text-align: center;">
+        <h3 id="qr-modal-title" class="lightbox-title" style="margin-bottom: 1rem;">QR Code</h3>
+        <img id="qr-modal-img" src="" alt="Full QR Code" style="background: #fff; padding: 10px; border-radius: 12px; width: 100%; max-width: 290px; margin: 0 auto 1.2rem; border: 2px solid var(--color-gold-champagne);">
+        <a id="qr-download-btn" href="#" download class="btn btn-gold" style="font-size: 0.8rem; width: 100%;">
+          <i class="fa-solid fa-download"></i> Save QR Code
         </a>
       </div>
     </div>
@@ -1107,15 +913,13 @@
       <span id="toast-message">Copied to clipboard!</span>
     </div>
 
-    <!-- =======================================================================
-         SECTION 13: WEDDING MUSIC PLAYER WIDGET
-         ======================================================================= -->
+    <!-- Floating Wedding Music Player Widget (Mobile-Friendly) -->
     <div id="music-widget" class="music-widget" title="Click to play or pause wedding music">
       <div class="music-disc">
         <i class="fa-solid fa-music"></i>
       </div>
       <div class="music-info">
-        <span class="music-track-title">Wedding Melodies</span>
+        <span class="music-track-title">Wedding Music</span>
         <div class="music-wave-bars">
           <div class="music-bar"></div>
           <div class="music-bar"></div>
@@ -1125,7 +929,7 @@
       </div>
     </div>
 
-    <!-- Optional Audio Tag (If a local MP3 file is placed at assets/audio/wedding-song.mp3) -->
+    <!-- Optional Audio Tag -->
     <audio id="wedding-audio" loop preload="none">
       <source src="assets/audio/wedding-song.mp3" type="audio/mpeg">
     </audio>
@@ -1133,18 +937,16 @@
   </main>
 
   <!-- =========================================================================
-       SECTION 15: FOOTER
+       FOOTER
        ========================================================================= -->
   <footer class="footer-section">
     <div class="container">
-      <!-- Monogram -->
-      <img src="assets/images/monogram.svg" alt="Isabella & Alexander Monogram" class="footer-monogram">
+      <img src="assets/images/monogram.svg" alt="Criscel & Joseph Monogram" class="footer-monogram">
 
       <p class="footer-subtitle">With Love and Gratitude</p>
       
-      <!-- Couple Names & Date -->
-      <h2 class="footer-couples-names">Isabella &amp; Alexander</h2>
-      <p class="footer-date">Saturday, December 19, 2026 &bull; Manila, Philippines</p>
+      <h2 class="footer-couples-names">Criscel &amp; Joseph</h2>
+      <p class="footer-date">Tuesday, November 24, 2026 &bull; Tabaco City, Albay</p>
 
       <p class="footer-gratitude-text">
         "Thank you for being part of our beautiful journey. Your love and blessings mean the world to us as we begin our forever."
@@ -1156,7 +958,7 @@
       </a>
 
       <p class="footer-copyright">
-        &copy; 2026 Isabella Marie Santos &amp; Alexander James Ramos. All rights reserved.<br>
+        &copy; 2026 Criscel Boncolmo &amp; Joseph Larot. All rights reserved.<br>
         Crafted with love in Burgundy &amp; Champagne Gold.
       </p>
     </div>
