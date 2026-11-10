@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/monogram.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/monogram.svg?v=4">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,20 +37,20 @@
   <div id="envelope-overlay" class="envelope-overlay">
     <div class="envelope-card">
       <!-- Monogram Seal -->
-      <img src="assets/images/monogram.svg" alt="Criscel & Joseph Monogram" class="envelope-monogram">
+      <img src="assets/images/monogram.svg?v=4" alt="Criscel & Joseph Monogram" class="envelope-monogram">
       
-      <p class="envelope-invitation-text">Formal Wedding Invitation</p>
-      
+      <p class="envelope-invitation-text">FORMAL WEDDING INVITATION</p>
+
       <!-- Dynamic guest personalized name from URL ?guest=Name -->
       <div id="envelope-guest-name" class="envelope-guest-badge">Cordially Invited: Honored Guest</div>
       
       <h1 class="envelope-couples-names">Criscel &amp; Joseph</h1>
-      <p class="envelope-date">Tuesday, November 24, 2026 &bull; Tabaco City, Albay</p>
+      <p class="envelope-date">TUESDAY, NOVEMBER 24, 2026 &bull; TABACO CITY, ALBAY</p>
 
-      <!-- Wax Seal Open Button -->
+      <!-- Wax Seal Open Button with Interactive Animation -->
       <button id="enter-invitation-btn" class="wax-seal-btn" title="Click to open the invitation">
-        <img src="assets/images/wax-seal.svg" alt="Burgundy Wax Seal Stamp" class="wax-seal-img">
-        <span class="wax-seal-text"><i class="fa-solid fa-envelope-open-text"></i> Open Invitation</span>
+        <img src="assets/images/wax-seal.svg?v=4" alt="Burgundy Wax Seal Stamp" class="wax-seal-img">
+        <span class="wax-seal-text"><i class="fa-solid fa-envelope"></i> OPEN INVITATION</span>
       </button>
     </div>
   </div>
@@ -62,7 +62,7 @@
     <div class="container">
       <!-- Brand Monogram -->
       <a href="#home" class="nav-brand" title="Criscel & Joseph">
-        <img src="assets/images/monogram.svg" alt="Monogram" class="nav-brand-monogram">
+        <img src="assets/images/monogram.svg?v=4" alt="Monogram" class="nav-brand-monogram">
         <span class="nav-brand-names">C &amp; J</span>
       </a>
 
@@ -203,12 +203,15 @@
 
         <!-- Quick Calendar Sync -->
         <div class="countdown-actions">
-          <a id="add-gcal-btn" href="#" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.4rem;">
-            <i class="fa-brands fa-google"></i> Add to Calendar
+          <a id="add-gcal-btn" href="#" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+            <i class="fa-brands fa-google"></i> Google Calendar
           </a>
-          <button id="add-ical-btn" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.4rem;">
-            <i class="fa-brands fa-apple"></i> Save (.ics)
+          <button id="add-ical-btn" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+            <i class="fa-brands fa-apple"></i> Apple Calendar
           </button>
+          <a id="add-outlook-btn" href="#" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+            <i class="fa-brands fa-microsoft"></i> Outlook
+          </a>
         </div>
       </div>
     </section>
@@ -381,9 +384,14 @@
               </iframe>
             </div>
 
-            <a href="https://maps.google.com/?q=St.+Anthony+of+Padua+Parish+San+Antonio+Tabaco+City+Albay" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-              <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
-            </a>
+            <div class="detail-actions" style="display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;">
+              <a href="https://maps.google.com/?q=St.+Anthony+of+Padua+Parish+San+Antonio+Tabaco+City+Albay" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+              </a>
+              <a href="https://waze.com/ul?q=St.+Anthony+of+Padua+Parish+San+Antonio+Tabaco+City+Albay&navigate=yes" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+                <i class="fa-brands fa-waze"></i> Open in Waze
+              </a>
+            </div>
           </div>
 
           <!-- Card 2: Reception -->
@@ -421,9 +429,14 @@
               </iframe>
             </div>
 
-            <a href="https://maps.google.com/?q=Jamaica+Mansions+Subdivision+Panal+Tabaco+City+Albay" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-              <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
-            </a>
+            <div class="detail-actions" style="display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;">
+              <a href="https://maps.google.com/?q=Jamaica+Mansions+Subdivision+Panal+Tabaco+City+Albay" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+              </a>
+              <a href="https://waze.com/ul?q=Jamaica+Mansions+Subdivision+Panal+Tabaco+City+Albay&navigate=yes" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold" style="font-size: 0.78rem; padding: 0.65rem 1.2rem;">
+                <i class="fa-brands fa-waze"></i> Open in Waze
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -941,7 +954,7 @@
        ========================================================================= -->
   <footer class="footer-section">
     <div class="container">
-      <img src="assets/images/monogram.svg" alt="Criscel & Joseph Monogram" class="footer-monogram">
+      <img src="assets/images/monogram.svg?v=4" alt="Criscel & Joseph Monogram" class="footer-monogram">
 
       <p class="footer-subtitle">With Love and Gratitude</p>
       
