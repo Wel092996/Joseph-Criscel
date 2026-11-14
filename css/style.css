@@ -1173,17 +1173,28 @@ button {
 }
 
 .detail-icon-wrap {
-  width: 72px;
-  height: 72px;
+  width: clamp(86px, 12vw, 102px);
+  height: clamp(86px, 12vw, 102px);
   border-radius: 50%;
-  background: rgba(212, 175, 127, 0.12);
-  border: 1.5px solid var(--color-gold-champagne);
+  background: radial-gradient(circle at 35% 35%, rgba(245, 208, 139, 0.28), rgba(74, 0, 31, 0.85));
+  border: 2px solid var(--color-gold-champagne);
+  box-shadow: 0 0 25px rgba(212, 175, 127, 0.38), 0 8px 20px rgba(0, 0, 0, 0.6);
   color: var(--color-gold-bright);
-  font-size: 1.8rem;
+  font-size: clamp(2.4rem, 5vw, 3rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.2rem;
+  margin: 0 auto 1.4rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-icon-wrap i {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+.detail-card:hover .detail-icon-wrap {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(212, 175, 127, 0.58), 0 10px 25px rgba(0, 0, 0, 0.7);
 }
 
 .detail-card-badge {
