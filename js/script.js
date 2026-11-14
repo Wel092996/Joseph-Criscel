@@ -1,7 +1,8 @@
 /**
  * ============================================================================
  * PREMIUM BURGUNDY & CHAMPAGNE GOLD WEDDING INVITATION
- * Interactive Scripts & Application Logic
+ * Criscel & Joseph — November 24, 2026 | Tabaco City, Albay
+ * Interactive Scripts & Mobile-Optimized Application Logic
  * ============================================================================
  */
 
@@ -9,25 +10,21 @@
 // 1. Central Wedding Configuration
 // ----------------------------------------------------------------------------
 const WEDDING_CONFIG = {
-  brideName: "Isabella Marie Santos",
-  groomName: "Alexander James Ramos",
-  coupleShortNames: "Isabella & Alexander",
-  weddingDateString: "December 19, 2026 15:00:00", // Target countdown date
-  weddingDisplayDate: "Saturday, December 19, 2026",
-  ceremonyVenue: "San Agustin Church",
-  ceremonyAddress: "General Luna St, Intramuros, Manila, 1002 Metro Manila",
-  receptionVenue: "The Glasshouse Garden Estate",
-  receptionAddress: "95 Roxas Blvd, Tambo, Parañaque, 1701 Metro Manila",
-  rsvpDeadline: "November 15, 2026",
-  
-  // Optional Google Sheets / Apps Script Webhook URL for RSVP responses
-  // Replace with your Google Apps Script Web App URL to receive submissions in Google Sheets
-  googleSheetsUrl: "", 
+  brideName: "Criscel Boncolmo",
+  groomName: "Joseph Larot",
+  coupleShortNames: "Criscel & Joseph",
+  weddingDateString: "November 24, 2026 14:00:00", // Target countdown date
+  weddingDisplayDate: "Tuesday, November 24, 2026",
+  ceremonyVenue: "St. Anthony of Padua Parish",
+  ceremonyAddress: "San Antonio, Tabaco City, Albay",
+  receptionVenue: "Jamaica Mansions Subdivision",
+  receptionAddress: "Panal, Tabaco City, Albay",
+  rsvpFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfSSxDoGPlh1x8Yj_5s2AYNP6GotcGR0CI0ZDExOr06hC7Aiw/viewform"
 };
 
 // ----------------------------------------------------------------------------
 // 2. Personalization / Guest Name URL Parameter Detection
-// e.g. index.html?guest=Mr.+and+Mrs.+Smith
+// e.g. index.html?guest=Tito+Boy+and+Tita+Baby
 // ----------------------------------------------------------------------------
 function initPersonalization() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -36,22 +33,17 @@ function initPersonalization() {
   if (guestName) {
     const cleanGuestName = decodeURIComponent(guestName).trim();
     
-    // Update envelope guest badge
+    // Update envelope guest badge if present
     const envelopeGuest = document.getElementById('envelope-guest-name');
     if (envelopeGuest) {
       envelopeGuest.textContent = `Cordially Invited: ${cleanGuestName}`;
     }
 
-    // Pre-fill RSVP full name field if empty
-    const rsvpNameInput = document.getElementById('guest-name');
-    if (rsvpNameInput && !rsvpNameInput.value) {
-      rsvpNameInput.value = cleanGuestName;
-    }
-
-    // Update greeting banner if present
+    // Update guest greeting banner if present
     const guestGreeting = document.getElementById('guest-personal-greeting');
     if (guestGreeting) {
-      guestGreeting.textContent = `Dearest ${cleanGuestName},`;
+      guestGreeting.innerHTML = `Cordially Invited: <strong>${cleanGuestName}</strong>`;
+      guestGreeting.style.display = 'inline-block';
     }
   }
 }
@@ -61,44 +53,46 @@ function initPersonalization() {
 // ----------------------------------------------------------------------------
 function initEnvelope() {
   const envelopeOverlay = document.getElementById('envelope-overlay');
+  const envelopeCard = document.querySelector('.envelope-card');
   const enterBtn = document.getElementById('enter-invitation-btn');
-  const heroEnterBtn = document.getElementById('hero-enter-btn');
+
+  // Prevent background scrolling while envelope is closed
+  if (envelopeOverlay && !envelopeOverlay.classList.contains('opened')) {
+    document.body.style.overflow = 'hidden';
+  }
 
   function openEnvelope() {
-    if (envelopeOverlay) {
-      envelopeOverlay.classList.add('opened');
-      document.body.style.overflow = 'auto';
-      
-      // Attempt to play romantic background music on user gesture
-      if (window.WeddingAudio) {
-        window.WeddingAudio.play();
+    // Add realistic wax-seal breaking and envelope opening animation
+    if (envelopeCard) {
+      envelopeCard.classList.add('unsealing');
+    }
+
+    // Start romantic background music upon unsealing
+    if (window.WeddingAudio) {
+      window.WeddingAudio.play();
+    }
+
+    // Smoothly fade and transition to the invitation after seal breaks
+    setTimeout(() => {
+      if (envelopeOverlay) {
+        envelopeOverlay.classList.add('opened');
+        document.body.style.overflow = 'auto';
       }
 
-      // Smooth scroll to hero
       const hero = document.getElementById('home');
       if (hero) {
         hero.scrollIntoView({ behavior: 'smooth' });
       }
-    }
+    }, 750);
   }
 
   if (enterBtn) {
     enterBtn.addEventListener('click', openEnvelope);
   }
-
-  if (heroEnterBtn) {
-    heroEnterBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const story = document.getElementById('story');
-      if (story) {
-        story.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
 }
 
 // ----------------------------------------------------------------------------
-// 4. Real-time Wedding Countdown Timer
+// 3. Real-time Wedding Countdown Timer
 // ----------------------------------------------------------------------------
 function initCountdown() {
   const daysEl = document.getElementById('countdown-days');
@@ -108,7 +102,11 @@ function initCountdown() {
   const countdownGrid = document.getElementById('countdown-grid');
   const countdownEnded = document.getElementById('countdown-ended');
 
-  const weddingTargetTime = new Date(WEDDING_CONFIG.weddingDateString).getTime();
+  let weddingTargetTime = new Date(WEDDING_CONFIG.weddingDateString).getTime();
+  if (isNaN(weddingTargetTime)) {
+    // Fallback for browsers with strict date parser: Month index 10 = November
+    weddingTargetTime = new Date(2026, 10, 24, 14, 0, 0).getTime();
+  }
 
   function updateTimer() {
     const now = new Date().getTime();
@@ -136,24 +134,31 @@ function initCountdown() {
 }
 
 // ----------------------------------------------------------------------------
-// 5. Add To Calendar Functionality (Google Calendar & iCal .ics download)
+// 4. Add To Calendar Functionality (Google Calendar & iCal .ics download)
 // ----------------------------------------------------------------------------
 function initCalendarButtons() {
   const gcalBtn = document.getElementById('add-gcal-btn');
   const icalBtn = document.getElementById('add-ical-btn');
 
   const eventTitle = `${WEDDING_CONFIG.coupleShortNames} Wedding`;
-  const eventDetails = `Celebrating the Holy Matrimony of ${WEDDING_CONFIG.brideName} and ${WEDDING_CONFIG.groomName}. Reception immediately follows at ${WEDDING_CONFIG.receptionVenue}.`;
+  const eventDetails = `Celebrating the Holy Matrimony of ${WEDDING_CONFIG.brideName} and ${WEDDING_CONFIG.groomName}. Ceremony at ${WEDDING_CONFIG.ceremonyVenue}, Tabaco City, Albay. Reception follows at ${WEDDING_CONFIG.receptionVenue}.`;
   const location = `${WEDDING_CONFIG.ceremonyVenue}, ${WEDDING_CONFIG.ceremonyAddress}`;
 
-  // 2026-12-19 from 15:00 to 22:00 PHT (UTC+8) -> UTC 07:00 to 14:00
-  const startIso = "20261219T070000Z";
-  const endIso = "20261219T140000Z";
+  // 2026-11-24 from 14:00 to 21:00 PHT (UTC+8) -> UTC 06:00 to 13:00
+  const startIso = "20261124T060000Z";
+  const endIso = "20261124T130000Z";
 
   if (gcalBtn) {
     const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startIso}/${endIso}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(location)}`;
     gcalBtn.href = gcalUrl;
     gcalBtn.target = "_blank";
+  }
+
+  const outlookBtn = document.getElementById('add-outlook-btn');
+  if (outlookBtn) {
+    const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-11-24T14:00:00&enddt=2026-11-24T21:00:00&body=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(location)}`;
+    outlookBtn.href = outlookUrl;
+    outlookBtn.target = "_blank";
   }
 
   if (icalBtn) {
@@ -162,9 +167,9 @@ function initCalendarButtons() {
       const icsContent = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//Isabella and Alexander Wedding//EN",
+        "PRODID:-//Criscel and Joseph Wedding//EN",
         "BEGIN:VEVENT",
-        `UID:${Date.now()}@wedding.isabellaandalexander.com`,
+        `UID:${Date.now()}@wedding.criscelandjoseph.com`,
         `DTSTAMP:${startIso}`,
         `DTSTART:${startIso}`,
         `DTEND:${endIso}`,
@@ -179,7 +184,7 @@ function initCalendarButtons() {
       const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.setAttribute('download', 'Isabella-Alexander-Wedding.ics');
+      link.setAttribute('download', 'Criscel-Joseph-Wedding.ics');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -188,7 +193,7 @@ function initCalendarButtons() {
 }
 
 // ----------------------------------------------------------------------------
-// 6. Floating Rose Petals & Gold Particle Canvas Animation
+// 5. Floating Rose Petals & Gold Particle Canvas Animation (Mobile-Optimized)
 // ----------------------------------------------------------------------------
 function initParticlesCanvas() {
   const canvas = document.getElementById('particles-canvas');
@@ -204,7 +209,8 @@ function initParticlesCanvas() {
   });
 
   const particles = [];
-  const particleCount = window.innerWidth < 768 ? 22 : 45;
+  // Use fewer particles on mobile for 60fps performance and low battery consumption
+  const particleCount = window.innerWidth < 768 ? 18 : 36;
 
   class Particle {
     constructor() {
@@ -214,18 +220,18 @@ function initParticlesCanvas() {
     reset(initial = false) {
       this.x = Math.random() * width;
       this.y = initial ? Math.random() * height : -20;
-      this.size = Math.random() * 6 + 4;
-      this.speedY = Math.random() * 0.9 + 0.4;
-      this.speedX = Math.random() * 0.8 - 0.4;
+      this.size = Math.random() * 5 + 3;
+      this.speedY = Math.random() * 0.8 + 0.3;
+      this.speedX = Math.random() * 0.6 - 0.3;
       this.angle = Math.random() * Math.PI * 2;
       this.angularSpeed = (Math.random() - 0.5) * 0.02;
-      this.isPetal = Math.random() > 0.45; // Petal vs Gold Dust Sparkle
-      this.opacity = Math.random() * 0.5 + 0.3;
+      this.isPetal = Math.random() > 0.5;
+      this.opacity = Math.random() * 0.45 + 0.25;
     }
 
     update() {
       this.y += this.speedY;
-      this.x += Math.sin(this.angle) * 0.5 + this.speedX;
+      this.x += Math.sin(this.angle) * 0.4 + this.speedX;
       this.angle += this.angularSpeed;
 
       if (this.y > height + 20 || this.x < -20 || this.x > width + 20) {
@@ -275,7 +281,7 @@ function initParticlesCanvas() {
 }
 
 // ----------------------------------------------------------------------------
-// 7. Photo Gallery Filter & Full-Screen Lightbox Modal
+// 6. Photo Gallery Filter & Full-Screen Lightbox Modal
 // ----------------------------------------------------------------------------
 function initGalleryAndLightbox() {
   const filterBtns = document.querySelectorAll('.gallery-filter-btn');
@@ -308,7 +314,6 @@ function initGalleryAndLightbox() {
         }
       });
 
-      // Update visible items list for lightbox navigation
       currentItems = Array.from(galleryItems).filter((item) => item.style.display !== 'none');
     });
   });
@@ -386,141 +391,28 @@ function initGalleryAndLightbox() {
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
-}
 
-// ----------------------------------------------------------------------------
-// 8. Dynamic & Validated RSVP Form Handling
-// ----------------------------------------------------------------------------
-function initRsvpForm() {
-  const form = document.getElementById('wedding-rsvp-form');
-  const attendanceYes = document.getElementById('attend-yes');
-  const attendanceNo = document.getElementById('attend-no');
-  const attendanceLabels = document.querySelectorAll('.attendance-option-label');
-  const additionalFields = document.getElementById('additional-guests-fields');
-  const guestCountSelect = document.getElementById('guest-count');
-  const dynamicGuestNamesContainer = document.getElementById('dynamic-guest-names-container');
-  const successModal = document.getElementById('rsvp-success-modal');
-  const successCloseBtn = document.getElementById('rsvp-success-close-btn');
+  // Mobile Touch Swipe support for Lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+  if (lightbox) {
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
 
-  // Handle Attendance Radio Changes
-  function handleAttendanceChange() {
-    attendanceLabels.forEach((lbl) => lbl.classList.remove('active'));
-
-    if (attendanceYes && attendanceYes.checked) {
-      attendanceYes.closest('.attendance-option-label').classList.add('active');
-      if (additionalFields) {
-        additionalFields.style.display = 'flex';
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        showNext(); // Swiped left -> next
+      } else if (touchEndX - touchStartX > 50) {
+        showPrev(); // Swiped right -> prev
       }
-    } else if (attendanceNo && attendanceNo.checked) {
-      attendanceNo.closest('.attendance-option-label').classList.add('active');
-      if (additionalFields) {
-        additionalFields.style.display = 'none';
-      }
-    }
-  }
-
-  if (attendanceYes) attendanceYes.addEventListener('change', handleAttendanceChange);
-  if (attendanceNo) attendanceNo.addEventListener('change', handleAttendanceChange);
-
-  // Dynamic Guest Name Inputs when count changes
-  if (guestCountSelect && dynamicGuestNamesContainer) {
-    guestCountSelect.addEventListener('change', () => {
-      const count = parseInt(guestCountSelect.value, 10);
-      dynamicGuestNamesContainer.innerHTML = '';
-
-      if (count > 1) {
-        const titleEl = document.createElement('label');
-        titleEl.className = 'form-label';
-        titleEl.innerHTML = 'Names of Accompanying Guests <span class="required">*</span>';
-        dynamicGuestNamesContainer.appendChild(titleEl);
-
-        for (let i = 2; i <= count; i++) {
-          const input = document.createElement('input');
-          input.type = 'text';
-          input.className = 'form-control';
-          input.placeholder = `Full Name of Guest #${i}`;
-          input.required = true;
-          input.name = `accompanying_guest_${i}`;
-          input.style.marginBottom = '0.6rem';
-          dynamicGuestNamesContainer.appendChild(input);
-        }
-      }
-    });
-  }
-
-  // Handle Form Submission
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const fullName = document.getElementById('guest-name')?.value.trim();
-      const email = document.getElementById('guest-email')?.value.trim();
-      const phone = document.getElementById('guest-phone')?.value.trim();
-      const attendance = attendanceYes?.checked ? "Joyfully Accepts" : "Regretfully Declines";
-      const guestCount = attendanceYes?.checked ? (guestCountSelect?.value || "1") : "0";
-      const specialMessage = document.getElementById('guest-message')?.value.trim();
-
-      // Collect accompanying guest names
-      const accompanyingInputs = dynamicGuestNamesContainer?.querySelectorAll('input') || [];
-      const accompanyingNames = Array.from(accompanyingInputs).map(inp => inp.value.trim()).filter(Boolean);
-
-      const rsvpData = {
-        fullName,
-        email,
-        phone,
-        attendance,
-        guestCount,
-        accompanyingNames,
-        specialMessage,
-        submittedAt: new Date().toISOString()
-      };
-
-      // Save into LocalStorage for immediate persistence
-      try {
-        const stored = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]');
-        stored.push(rsvpData);
-        localStorage.setItem('wedding_rsvps', JSON.stringify(stored));
-      } catch (err) {
-        console.warn('LocalStorage error:', err);
-      }
-
-      // If user configured Google Sheets Webhook, send POST payload
-      if (WEDDING_CONFIG.googleSheetsUrl) {
-        fetch(WEDDING_CONFIG.googleSheetsUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(rsvpData)
-        }).catch(err => console.log('Sheets submission:', err));
-      }
-
-      // Show animated success confirmation modal
-      if (successModal) {
-        const summaryEl = document.getElementById('rsvp-summary-text');
-        if (summaryEl) {
-          if (attendance === "Joyfully Accepts") {
-            summaryEl.innerHTML = `Thank you, <strong>${fullName}</strong>! We are overjoyed to celebrate our special day with you (Party of ${guestCount}). A confirmation email has been logged.`;
-          } else {
-            summaryEl.innerHTML = `Thank you for letting us know, <strong>${fullName}</strong>. You will be dearly missed on our wedding day!`;
-          }
-        }
-        successModal.classList.add('open');
-      }
-
-      form.reset();
-      handleAttendanceChange();
-    });
-  }
-
-  if (successCloseBtn && successModal) {
-    successCloseBtn.addEventListener('click', () => {
-      successModal.classList.remove('open');
-    });
+    }, { passive: true });
   }
 }
 
 // ----------------------------------------------------------------------------
-// 9. Gift Registry Clipboard & QR Code Modal
+// 7. Gift Registry Clipboard & QR Code Modal
 // ----------------------------------------------------------------------------
 function initGiftSection() {
   const copyBtns = document.querySelectorAll('.copy-btn');
@@ -608,7 +500,7 @@ function initGiftSection() {
 }
 
 // ----------------------------------------------------------------------------
-// 10. Background Wedding Music & Web Audio Synthesizer
+// 8. Background Wedding Music & Web Audio Synthesizer
 // ----------------------------------------------------------------------------
 function initWeddingMusic() {
   const musicWidgets = document.querySelectorAll('.music-widget, .nav-music-btn');
@@ -620,14 +512,14 @@ function initWeddingMusic() {
 
   // Romantic acoustic chord progression (Canon in D / Wedding Acoustic Arpeggio in D Major)
   const notes = [
-    293.66, 369.99, 440.00, 587.33, // D - F# - A - D
-    220.00, 329.63, 440.00, 554.37, // A - E - A - C#
-    246.94, 293.66, 369.99, 493.88, // Bm - D - F# - B
-    185.00, 277.18, 369.99, 440.00, // F#m - C# - F# - A
-    196.00, 293.66, 392.00, 587.33, // G - D - G - B
-    146.83, 220.00, 293.66, 440.00, // D/F# - A - D - F#
-    196.00, 246.94, 293.66, 392.00, // G - B - D - G
-    220.00, 277.18, 329.63, 440.00  // A - C# - E - A
+    293.66, 369.99, 440.00, 587.33,
+    220.00, 329.63, 440.00, 554.37,
+    246.94, 293.66, 369.99, 493.88,
+    185.00, 277.18, 369.99, 440.00,
+    196.00, 293.66, 392.00, 587.33,
+    146.83, 220.00, 293.66, 440.00,
+    196.00, 246.94, 293.66, 392.00,
+    220.00, 277.18, 329.63, 440.00
   ];
 
   function playSynthHarpNote(freq, time) {
@@ -640,7 +532,7 @@ function initWeddingMusic() {
 
     // Soft harp / acoustic pluck envelope
     gain.gain.setValueAtTime(0.001, time);
-    gain.gain.exponentialRampToValueAtTime(0.12, time + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.1, time + 0.04);
     gain.gain.exponentialRampToValueAtTime(0.0001, time + 2.2);
 
     osc.connect(gain);
@@ -663,7 +555,6 @@ function initWeddingMusic() {
     synthInterval = setInterval(() => {
       const now = audioCtx.currentTime;
       playSynthHarpNote(notes[noteIdx % notes.length], now);
-      // Play complementary harmonic bass note every 4 notes
       if (noteIdx % 4 === 0) {
         playSynthHarpNote(notes[noteIdx % notes.length] / 2, now);
       }
@@ -682,10 +573,8 @@ function initWeddingMusic() {
     isPlaying = true;
     musicWidgets.forEach(w => w.classList.add('playing'));
 
-    // Try HTML5 audio first if audio source is present and working
     if (audioTag && audioTag.src && !audioTag.src.endsWith('/')) {
       audioTag.play().catch(() => {
-        // Fallback to Web Audio synthesized romantic harp
         startSynthProgression();
       });
     } else {
@@ -713,7 +602,18 @@ function initWeddingMusic() {
 
   musicWidgets.forEach(w => w.addEventListener('click', toggleMusic));
 
-  // Expose to window for envelope opener
+  // Autoplay attempt on user's first touch/interaction on mobile
+  const startAudioOnFirstInteraction = () => {
+    if (!isPlaying) {
+      playMusic();
+    }
+    window.removeEventListener('click', startAudioOnFirstInteraction);
+    window.removeEventListener('touchstart', startAudioOnFirstInteraction);
+  };
+
+  window.addEventListener('click', startAudioOnFirstInteraction, { once: true });
+  window.addEventListener('touchstart', startAudioOnFirstInteraction, { once: true });
+
   window.WeddingAudio = {
     play: playMusic,
     pause: pauseMusic,
@@ -723,7 +623,7 @@ function initWeddingMusic() {
 }
 
 // ----------------------------------------------------------------------------
-// 11. Sticky Navigation, Mobile Drawer & ScrollSpy
+// 9. Sticky Navigation, Mobile Drawer & ScrollSpy
 // ----------------------------------------------------------------------------
 function initNavigation() {
   const navbar = document.getElementById('main-navbar');
@@ -734,15 +634,13 @@ function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
 
-  // Scroll navbar styling
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
     }
 
-    // ScrollSpy active link update
     let currentSectionId = '';
     const scrollPos = window.scrollY + 120;
 
@@ -769,7 +667,6 @@ function initNavigation() {
     });
   });
 
-  // Mobile Drawer Toggle
   function openMobileMenu() {
     hamburgerBtn?.classList.add('active');
     mobileDrawer?.classList.add('open');
@@ -799,7 +696,7 @@ function initNavigation() {
 }
 
 // ----------------------------------------------------------------------------
-// 12. Main Initialization on DOM Ready
+// 10. Main Initialization on DOM Ready
 // ----------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
   initPersonalization();
@@ -808,7 +705,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendarButtons();
   initParticlesCanvas();
   initGalleryAndLightbox();
-  initRsvpForm();
   initGiftSection();
   initWeddingMusic();
   initNavigation();
