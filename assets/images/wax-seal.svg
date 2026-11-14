@@ -1,52 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
   <defs>
-    <radialGradient id="waxBase" cx="40%" cy="35%" r="65%">
+    <radialGradient id="waxBase" cx="38%" cy="32%" r="68%">
       <stop offset="0%" stop-color="#9E1837" />
-      <stop offset="50%" stop-color="#6B0A24" />
+      <stop offset="45%" stop-color="#6B0A24" />
       <stop offset="85%" stop-color="#400213" />
-      <stop offset="100%" stop-color="#28000A" />
+      <stop offset="100%" stop-color="#240008" />
     </radialGradient>
     <linearGradient id="sealGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFF5E5" />
-      <stop offset="40%" stop-color="#E5C185" />
-      <stop offset="70%" stop-color="#C29B58" />
-      <stop offset="100%" stop-color="#805B20" />
+      <stop offset="0%" stop-color="#FFF8F0" />
+      <stop offset="30%" stop-color="#F5D08B" />
+      <stop offset="70%" stop-color="#D4AF7F" />
+      <stop offset="100%" stop-color="#996E2E" />
     </linearGradient>
     <filter id="waxDrop" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+      <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
     <filter id="emboss" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="1" dy="1" stdDeviation="0.8" flood-color="#000000" flood-opacity="0.8"/>
-      <feDropShadow dx="-1" dy="-1" stdDeviation="0.8" flood-color="#FFA8B8" flood-opacity="0.3"/>
+      <feDropShadow dx="1.2" dy="1.2" stdDeviation="0.8" flood-color="#000000" flood-opacity="0.85"/>
+      <feDropShadow dx="-1" dy="-1" stdDeviation="0.8" flood-color="#FF9EAF" flood-opacity="0.35"/>
     </filter>
   </defs>
 
-  <!-- Irregular Melted Wax Edge -->
-  <path d="M 80 10 
-           C 105 8, 122 18, 138 34 
-           C 152 48, 156 68, 153 90 
-           C 150 110, 142 128, 125 142 
-           C 108 156, 88 154, 70 152 
-           C 50 150, 32 145, 18 130 
-           C 6 115, 8 92, 10 74 
-           C 12 55, 20 32, 40 18 
-           C 56 6, 68 11, 80 10 Z" 
+  <!-- Organic Melted Wax Outer Edge -->
+  <path d="M 80 8 
+           C 106 6, 124 16, 140 34 
+           C 154 48, 158 70, 154 92 
+           C 151 112, 142 130, 125 144 
+           C 107 158, 86 156, 68 153 
+           C 48 151, 30 145, 16 128 
+           C 4 112, 6 90, 8 72 
+           C 10 52, 18 30, 38 16 
+           C 54 4, 66 9, 80 8 Z" 
         fill="url(#waxBase)" filter="url(#waxDrop)" />
 
   <!-- Inner Recessed Stamped Ring -->
-  <circle cx="80" cy="80" r="54" fill="#58081C" stroke="url(#waxBase)" stroke-width="3" filter="url(#emboss)" />
-  <circle cx="80" cy="80" r="48" fill="none" stroke="url(#sealGold)" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+  <circle cx="80" cy="80" r="54" fill="#520619" stroke="url(#waxBase)" stroke-width="3" filter="url(#emboss)" />
+  <circle cx="80" cy="80" r="48" fill="none" stroke="url(#sealGold)" stroke-width="1.8" stroke-dasharray="3.5 2.5" opacity="0.85" />
 
-  <!-- Stamped Crest & Monogram -->
+  <!-- Stamped Crest & Classic Balanced C & J -->
   <g filter="url(#emboss)">
-    <!-- Tiny Crown / Laurel Top -->
-    <path d="M 72 48 L 80 43 L 88 48 L 85 53 L 75 53 Z" fill="url(#sealGold)" />
-    <!-- Monogram Letters -->
-    <text x="66" y="93" font-family="'Great Vibes', 'Playfair Display', Georgia, serif" font-size="44" fill="url(#sealGold)" font-weight="bold" font-style="italic" text-anchor="middle">I</text>
-    <text x="80" y="84" font-family="'Playfair Display', Georgia, serif" font-size="18" fill="#FCEFD8" text-anchor="middle">&amp;</text>
-    <text x="96" y="95" font-family="'Great Vibes', 'Playfair Display', Georgia, serif" font-size="44" fill="url(#sealGold)" font-weight="bold" font-style="italic" text-anchor="middle">A</text>
+    <!-- Small Coronet / Crown at Top -->
+    <path d="M 72 45 L 80 39 L 88 45 L 85 50 L 75 50 Z" fill="url(#sealGold)" />
     
-    <!-- Heart Bottom Accent -->
-    <path d="M 80 108 C 78 105, 73 103, 71 106 C 68 110, 72 114, 80 118 C 88 114, 92 110, 89 106 C 87 103, 82 105, 80 108 Z" fill="url(#sealGold)" />
+    <!-- Letter C -->
+    <text x="56" y="93"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="bold"
+          font-size="44"
+          fill="url(#sealGold)"
+          text-anchor="middle">C</text>
+    
+    <!-- Ampersand -->
+    <text x="80" y="83"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="bold"
+          font-size="20"
+          fill="#FFF2DE"
+          text-anchor="middle">&amp;</text>
+    
+    <!-- Letter J -->
+    <text x="104" y="95"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="bold"
+          font-size="44"
+          fill="url(#sealGold)"
+          text-anchor="middle">J</text>
+    
+    <!-- Gold Heart Accent at Bottom -->
+    <path d="M 80 114 C 77 110, 72 108, 70 111 C 67 116, 72 120, 80 124 C 88 120, 93 116, 90 111 C 88 108, 83 110, 80 114 Z" fill="url(#sealGold)" />
   </g>
 </svg>
