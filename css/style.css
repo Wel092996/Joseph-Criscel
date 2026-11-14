@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    PREMIUM BURGUNDY & CHAMPAGNE GOLD WEDDING INVITATION
    Criscel & Joseph â€” November 24, 2026 | Tabaco City, Albay
    Mobile-First & Fully Responsive Stylesheet
@@ -871,7 +871,7 @@ button {
    -------------------------------------------------------------------------- */
 .countdown-section {
   background: linear-gradient(180deg, #24000E 0%, #3D001A 50%, #24000E 100%);
-  padding: 4.2rem 0;
+  padding: clamp(2rem, 3.5vw, 2.8rem) 0;
   border-top: 1px solid rgba(212, 175, 127, 0.3);
   border-bottom: 1px solid rgba(212, 175, 127, 0.3);
   position: relative;
@@ -881,35 +881,35 @@ button {
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
-  max-width: 760px;
-  margin: 0 auto 2.2rem;
+  gap: clamp(0.5rem, 1.8vw, 1rem);
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .countdown-card {
   background: linear-gradient(145deg, #4F0022, #320015);
   border: 1.5px solid var(--color-gold-champagne);
   border-radius: var(--radius-md);
-  padding: 1.5rem 0.8rem;
+  padding: clamp(0.75rem, 1.8vw, 1.1rem) clamp(0.35rem, 1vw, 0.75rem);
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
 .countdown-number {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(1.6rem, 3.8vw, 2.6rem);
   font-weight: 700;
   line-height: 1;
   color: var(--color-gold-bright);
   text-shadow: 0 2px 10px rgba(245, 208, 139, 0.35);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .countdown-label {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 2.5px;
+  font-size: clamp(0.6rem, 1.1vw, 0.7rem);
+  letter-spacing: clamp(1.2px, 0.3vw, 2px);
   text-transform: uppercase;
   color: var(--color-beige-soft);
   font-weight: 500;
@@ -919,17 +919,10 @@ button {
 .countdown-ended-message {
   display: none;
   font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
   color: var(--color-gold-bright);
   text-align: center;
-  padding: 1.5rem;
-}
-
-.countdown-actions {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
+  padding: 1.2rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -1879,9 +1872,22 @@ button {
   .section-padding {
     padding: 3.8rem 0;
   }
+  .countdown-section {
+    padding: 2rem 0;
+  }
   .countdown-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.45rem;
+  }
+  .countdown-card {
+    padding: 0.65rem 0.25rem;
+  }
+  .countdown-number {
+    font-size: 1.45rem;
+  }
+  .countdown-label {
+    font-size: 0.58rem;
+    letter-spacing: 1px;
   }
   .sponsors-paired-grid {
     grid-template-columns: 1fr;
@@ -1926,31 +1932,21 @@ button {
 
 @media (max-width: 480px) {
   .hero-inner-frame {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  background: rgba(42, 0, 18, 0.62);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1.5px solid var(--color-gold-champagne);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.6rem, 4vw, 3rem) clamp(1rem, 4vw, 2.8rem);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 30px rgba(212,175,127,0.2);
-  z-index: 2;
-  margin: auto;
-}
+    padding: 1.5rem 0.85rem;
+  }
   .hero-date-badge {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  background: rgba(212, 175, 127, 0.12);
-  border: 1px solid rgba(212, 175, 127, 0.5);
-  padding: 0.6rem 1.4rem;
-  border-radius: var(--radius-md);
-  color: var(--color-ivory);
-  margin-top: 0.9rem;
-}
+    padding: 0.5rem 0.9rem;
+  }
+  .countdown-grid {
+    gap: 0.35rem;
+  }
+  .countdown-number {
+    font-size: 1.35rem;
+  }
+  .countdown-label {
+    font-size: 0.52rem;
+    letter-spacing: 0.8px;
+  }
   .gallery-grid {
     grid-template-columns: 1fr;
   }
