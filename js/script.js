@@ -15,6 +15,7 @@ const WEDDING_CONFIG = {
   coupleShortNames: "Criscel & Joseph",
   weddingDateString: "November 24, 2026 14:00:00", // Target countdown date
   weddingDisplayDate: "Tuesday, November 24, 2026",
+  weddingSong: "Sa Aking Puso by Kaye Cal",
   ceremonyVenue: "St. Anthony of Padua Parish",
   ceremonyAddress: "San Antonio, Tabaco City, Albay",
   receptionVenue: "Jamaica Mansions Subdivision",
@@ -510,16 +511,16 @@ function initWeddingMusic() {
   let audioCtx = null;
   let synthInterval = null;
 
-  // Romantic acoustic chord progression (Canon in D / Wedding Acoustic Arpeggio in D Major)
+  // Romantic acoustic chord progression ("Sa Aking Puso" by Kaye Cal - C Major acoustic ballad)
   const notes = [
-    293.66, 369.99, 440.00, 587.33,
-    220.00, 329.63, 440.00, 554.37,
-    246.94, 293.66, 369.99, 493.88,
-    185.00, 277.18, 369.99, 440.00,
-    196.00, 293.66, 392.00, 587.33,
-    146.83, 220.00, 293.66, 440.00,
-    196.00, 246.94, 293.66, 392.00,
-    220.00, 277.18, 329.63, 440.00
+    261.63, 329.63, 392.00, 523.25, // C Major: C4, E4, G4, C5
+    246.94, 293.66, 392.00, 587.33, // G/B: B3, D4, G4, D5
+    220.00, 261.63, 329.63, 440.00, // Am: A3, C4, E4, A4
+    196.00, 246.94, 329.63, 392.00, // Em: G3, B3, E4, G4
+    174.61, 220.00, 261.63, 349.23, // F: F3, A3, C4, F4
+    164.81, 196.00, 261.63, 329.63, // C/E: E3, G3, C4, E4
+    146.83, 174.61, 220.00, 293.66, // Dm7: D3, F3, A3, D4
+    196.00, 246.94, 293.66, 392.00  // G: G3, B3, D4, G4
   ];
 
   function playSynthHarpNote(freq, time) {
@@ -530,16 +531,16 @@ function initWeddingMusic() {
     osc.type = 'triangle';
     osc.frequency.setValueAtTime(freq, time);
 
-    // Soft harp / acoustic pluck envelope
+    // Soft acoustic harp / guitar pluck envelope
     gain.gain.setValueAtTime(0.001, time);
-    gain.gain.exponentialRampToValueAtTime(0.1, time + 0.04);
-    gain.gain.exponentialRampToValueAtTime(0.0001, time + 2.2);
+    gain.gain.exponentialRampToValueAtTime(0.09, time + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + 2.4);
 
     osc.connect(gain);
     gain.connect(audioCtx.destination);
 
     osc.start(time);
-    osc.stop(time + 2.3);
+    osc.stop(time + 2.5);
   }
 
   function startSynthProgression() {
@@ -559,7 +560,7 @@ function initWeddingMusic() {
         playSynthHarpNote(notes[noteIdx % notes.length] / 2, now);
       }
       noteIdx++;
-    }, 420);
+    }, 450);
   }
 
   function stopSynthProgression() {
@@ -573,10 +574,13 @@ function initWeddingMusic() {
     isPlaying = true;
     musicWidgets.forEach(w => w.classList.add('playing'));
 
-    if (audioTag && audioTag.src && !audioTag.src.endsWith('/')) {
-      audioTag.play().catch(() => {
-        startSynthProgression();
-      });
+    if (audioTag) {
+      const playPromise = audioTag.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          startSynthProgression();
+        });
+      }
     } else {
       startSynthProgression();
     }
