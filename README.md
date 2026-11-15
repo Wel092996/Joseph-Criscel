@@ -1,121 +1,75 @@
-# Premium Burgundy & Champagne Gold Wedding Invitation Website
+# Criscel & Joseph — Wedding Invitation Website
 
-A luxury, romantic, digital wedding invitation website built with HTML5, CSS3, and JavaScript, styled in an aesthetic **Deep Burgundy & Champagne Gold** wedding theme.
-
----
-
-## 🌹 Design Concept & Color Palette
-
-- **Deep Burgundy**: `#800020`
-- **Dark Wine**: `#4A001F`
-- **Burgundy Red**: `#6D102C`
-- **Champagne Gold**: `#D4AF7F`
-- **Ivory**: `#FFF8F0`
-- **Soft Beige**: `#F5EBDD`
-- **Google Fonts**: *Great Vibes* (Script), *Playfair Display* (Serif), and *Montserrat* (Body)
+A mobile-friendly, luxurious, and romantic digital wedding invitation website built with HTML5, CSS3, and JavaScript, styled in an aesthetic **Deep Burgundy & Champagne Gold** wedding theme.
 
 ---
 
-## ✨ Features & Sections Included
+## 💍 Wedding Information
 
-1. **Royal Invitation Envelope**:
-   - Interactive 3D wax seal and burgundy envelope opening experience.
-   - Triggers background music autoplay upon user interaction.
+- **Bride & Groom**: Criscel Boncolmo & Joseph Dio
+- **Wedding Date**: Tuesday, November 24, 2026
+- **Ceremony**: St. Anthony of Padua Parish, San Antonio, Tabaco City, Albay (2:00 PM)
+- **Reception**: Jamaica Mansions Subdivision, Panal, Tabaco City, Albay
+- **RSVP Form**: [Google Forms RSVP Link](https://docs.google.com/forms/d/e/1FAIpQLSfSSxDoGPlh1x8Yj_5s2AYNP6GotcGR0CI0ZDExOr06hC7Aiw/viewform)
+- **Navigation Links**: Direct Google Maps & Waze navigation buttons for Church and Reception
+- **Color Theme**: Deep Burgundy (`#800020`), Dark Wine (`#4A001F`), Champagne Gold (`#D4AF7F`), Ivory (`#FFF8F0`), and Soft Beige (`#F5EBDD`)
+
+---
+
+## 📱 Mobile-First Features & Structure
+
+1. **Royal Opening Envelope with Interactive Wax Seal**:
+   - 3D wax seal and royal burgundy envelope landing screen with crisp **C & J** monogram.
+   - Hover aura with gentle pulse and breathing glow.
+   - Interactive unsealing animation: clicking "Open Invitation" breaks the seal, unfolds the envelope, and starts the romantic background music while scrolling to the main content.
    - Dynamic guest name personalization via URL (`?guest=Guest+Name`).
-2. **Hero Cover Section**:
-   - Romantic wedding photography background with wine-toned overlay.
-   - Handcrafted gold & burgundy rose corner decorations (`floral-corner.svg`).
-   - "Together with our families", "WE ARE GETTING MARRIED!", couple names, and "ENTER INVITATION" button.
-   - Floating rose petals & gold dust particle canvas.
-3. **Wedding Countdown Timer**:
-   - Live Days, Hours, Minutes, Seconds countdown updating every second.
-   - Automatically calculates remaining time until the wedding date.
-   - Displays *"TODAY IS THE DAY!"* when reached.
-   - "Add to Google Calendar" and downloadable Apple/Outlook `.ics` calendar file buttons.
-4. **Our Love Story**:
-   - Romantic alternating timeline with milestone photography, dates, and stories:
-     - *How We Met*
-     - *Our First Date*
-     - *The Proposal*
-     - *Our Journey Together*
-5. **Prenuptial Photo Gallery**:
-   - Filter tabs: *All Photos*, *The Prenup*, *Romantic Moments*, *Wedding Details*.
-   - Responsive masonry/grid with hover zoom and captions.
-   - Full-screen lightbox modal with Next/Previous arrows, photo counter, and keyboard navigation (`ESC`, `←`, `→`).
-6. **Wedding Details**:
-   - **Ceremony**: San Agustin Church, Intramuros, Manila (Date, Time, Address, Google Maps embed, and "Get Directions" button).
-   - **Reception**: The Glasshouse Garden Estate, Parañaque (Date, Time, Address, Google Maps embed, and "Get Directions" button).
-7. **Wedding Entourage**:
-   - Parents of the Bride & Groom.
-   - Principal Sponsors (Ninongs & Ninangs).
-   - Maid of Honor & Best Man.
-   - Bridesmaids & Groomsmen.
-   - Secondary Sponsors (Candle, Veil, Cord).
-   - Bearers & Flower Girls.
-8. **Wedding Program**:
-   - Visual timeline of the celebration: Guest Arrival, Ceremony, Pictorials, Cocktails, Grand Entrance, Dinner, First Dance, and Send-off.
-9. **Interactive RSVP Form**:
-   - Guest Full Name, Email Address, Contact Number.
-   - Attendance radio: "Joyfully Accepts" vs. "Regretfully Declines".
-   - **Conditional Fields**: If *No*, hides guest count and shows sweet message; if *Yes*, reveals Number of Guests and dynamic inputs for accompanying guest names and dietary allergies.
-   - Form validation & animated confirmation modal.
-   - Saves responses to `localStorage` + ready for Google Sheets Webhook integration.
-10. **Dress Code Guide**:
-    - Visual color swatches with hex codes: Deep Burgundy, Dark Wine, Champagne Gold, Dusty Rose, Warm Almond, Classic Charcoal.
-    - Specific attire guidelines for Principal Sponsors, Female Guests, and Male Guests.
-    - Gentle reminder regarding colors reserved for the bride.
-11. **Gift Registry / Wishing Well**:
-    - Thoughtful monetary gift note.
-    - GCash & Bank Transfer (BPI) cards.
-    - One-click "Copy Number" buttons with instant toast feedback.
-    - Full-screen QR code preview modal with "Save / Download QR" option.
-12. **Our Prenup Film**:
-    - Responsive 16:9 embedded cinematic video player with gold ornamental frame.
-13. **Wedding Music Experience**:
-    - Floating music player widget with animated sound bars.
-    - Built-in romantic acoustic harp/piano synthesizer via Web Audio API (works 100% offline).
-    - Can also play any custom MP3 placed in `assets/audio/wedding-song.mp3`.
-14. **Sticky Navigation**:
-    - Glassmorphic burgundy navbar with active ScrollSpy highlighting.
-    - Mobile slide-out drawer menu.
-15. **Footer**:
-    - Couple monogram, date, words of gratitude, and Back to Top button.
+2. **Hero Wedding Cover**:
+   - Couple names: **Criscel & Joseph** in romantic Great Vibes typography.
+   - Sacred message: *"Together with love, we invite you to celebrate our special day as we unite in the holy sacrament of matrimony."*
+   - Date and venue badge: *Tuesday, November 24, 2026 • Tabaco City, Albay*.
+   - **RSVP Today** action button with gold shimmer effect.
+   - Corner burgundy rose and gold vine ornaments.
+   - Gently floating petals and gold dust canvas.
+3. **Wedding Countdown Timer & Calendar Sync**:
+   - Real-time Days, Hours, Minutes, and Seconds countdown to November 24, 2026.
+   - **Google Calendar**, **Apple Calendar (.ics)**, and **Outlook** one-click sync buttons.
+4. **Photo Gallery & Lightbox**:
+   - Filter tabs: *All Photos*, *The Prenup*, *Romantic*, *Details*.
+   - Tap any photo to open full-screen lightbox modal with touch swipe gestures on mobile.
+5. **Wedding Details with Maps & Waze**:
+   - St. Anthony of Padua Parish & Jamaica Mansions Subdivision with interactive Google Maps.
+   - Direct **Google Maps** and **Open in Waze** navigation buttons for guests traveling to Tabaco City.
+5. **Dio and Boncolmo Entourage**:
+   - Parents of the Groom: Nestor Dio & Natividad Dio
+   - Parents of the Bride: Domingo Boncolmo & Grace Burce
+   - Principal Sponsors: 8 pairs of Ninongs & Ninangs
+   - Best Man & Maid of Honor: Arthur Dio & Lovely Boncolmo
+   - Secondary Sponsors: Candle, Veil, Cord
+   - Groomsmen & Bridesmaids: 4 pairs
+   - Bearers: Ring, Coin, and Bible Bearers
+   - Flower Girls: Steven, Brianna, Joenard, Klaire
+   - Offering: 3 pairs
+6. **Wedding Program**:
+   - Clean timeline from Guest Arrival (1:30 PM) to First Dance & Celebration (7:00 PM).
+7. **Dress Code**:
+   - Visual color palette swatches: Burgundy, Wine, Champagne, Dusty Rose, Beige, Charcoal.
+   - Clear guidelines for Principal Sponsors, Female Guests, and Male Guests.
+8. **RSVP Section**:
+   - Embedded Google Form for direct in-page mobile submission.
+   - Prominent **"Open RSVP in Google Forms"** button.
+9. **Gift Registry / Wishing Well**:
+   - GCash & Bank Transfer cards with one-tap copy buttons and QR code modal.
+10. **Background Wedding Music**:
+    - Floating compact music disc with animated sound bars.
+    - Plays synthesized romantic acoustic harp/piano progression via Web Audio API (works 100% offline) or custom MP3.
+11. **Mobile Navigation Drawer**:
+    - Smooth slide-out drawer menu with quick links to all sections.
 
 ---
 
-## 🛠️ How to Customize
+## 🚀 How to Host on GitHub Pages
 
-All primary details can be edited directly in **`js/script.js`** and **`index.html`**:
-
-### 1. Couple Names & Dates (`js/script.js`)
-Open `js/script.js` and edit the `WEDDING_CONFIG` object:
-```javascript
-const WEDDING_CONFIG = {
-  brideName: "Isabella Marie Santos",
-  groomName: "Alexander James Ramos",
-  coupleShortNames: "Isabella & Alexander",
-  weddingDateString: "December 19, 2026 15:00:00", // Target countdown date
-  weddingDisplayDate: "Saturday, December 19, 2026",
-  ceremonyVenue: "San Agustin Church",
-  ceremonyAddress: "General Luna St, Intramuros, Manila",
-  receptionVenue: "The Glasshouse Garden Estate",
-  receptionAddress: "95 Roxas Blvd, Tambo, Parañaque",
-  rsvpDeadline: "November 15, 2026",
-  googleSheetsUrl: "", // Optional Google Apps Script URL
-};
-```
-
-### 2. Replacing Photos
-- Simply replace the `src="..."` URLs in `index.html` under the `#story` and `#gallery` sections with your own image URLs or local files (e.g., `assets/images/prenup-1.jpg`).
-- All image tags include fallback `onerror` handlers pointing to `assets/images/placeholder.svg`.
-
-### 3. Personalizing Guest Links
-Share personalized links with your guests by appending `?guest=Name` to your URL:
-- `https://your-wedding-site.com/?guest=Mr.+and+Mrs.+Smith`
-- `https://your-wedding-site.com/?guest=Atty.+Manuel+Gonzales`
-
----
-
-## 🚀 How to Run Locally
-
-Double-click `index.html` to open it in any web browser (Google Chrome, Microsoft Edge, Safari, Firefox), or serve it with any local development server.
+1. Go to [github.com](https://github.com) and create a new **Public** repository (e.g. `criscel-and-joseph`).
+2. Upload all files from this folder (`index.html`, `css/`, `js/`, `assets/`, `README.md`).
+3. In repository **Settings > Pages**, set branch to **`main`** and folder to **`/(root)`**, then click **Save**.
+4. Your website will be live at: `https://<your-username>.github.io/criscel-and-joseph/`
