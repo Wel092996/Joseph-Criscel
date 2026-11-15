@@ -668,7 +668,7 @@
           <div class="program-item">
             <div class="program-icon-node"><i class="fa-solid fa-music"></i></div>
             <div class="program-card">
-              <div class="program-time">08:00 PM</div>
+              <div class="program-time">07:00 PM</div>
               <h3 class="program-title">First Dance &amp; Party</h3>
               <p class="program-desc">The couple's romantic first dance, cake cutting ceremony, and open celebration.</p>
             </div>
@@ -820,57 +820,30 @@
           </p>
         </div>
 
-        <div class="gift-cards-grid">
-          <!-- GCash Card -->
-          <div class="gift-card">
+        <div class="gift-cards-grid single-card">
+          <!-- GCash QR Card for Joseph -->
+          <div class="gift-card featured-gift-card">
             <div class="gift-card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <h3 class="gift-method-name">GCash</h3>
+            <h3 class="gift-method-name">GCash / InstaPay</h3>
 
             <!-- QR Code Preview -->
-            <img src="assets/images/qr-gcash.svg" alt="GCash QR Code" class="gift-qr-preview view-qr-btn" 
-                 data-qr-src="assets/images/qr-gcash.svg" data-qr-title="GCash QR Code">
+            <div class="gift-qr-container">
+              <img src="assets/images/qr-gcash.jpg" alt="GCash QR Code - Joseph Dio" class="gift-qr-preview view-qr-btn" 
+                   data-qr-src="assets/images/qr-gcash.jpg" data-qr-title="Joseph D. — GCash QR Code">
+              <p class="gift-qr-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Tap to enlarge / scan QR</p>
+            </div>
 
             <div class="gift-account-info">
               <p class="gift-account-label">Account Name</p>
-              <p class="gift-account-val">CRISCEL BONCOLMO</p>
+              <p class="gift-account-val">JOSEPH DIO (JO***H D.)</p>
               <br>
-              <p class="gift-account-label">Mobile Number</p>
-              <p class="gift-account-val">0917 123 4567</p>
+              <p class="gift-account-label">Payment Method</p>
+              <p class="gift-account-val">GCash / Any InstaPay Bank App</p>
             </div>
 
             <div class="gift-action-btns">
-              <button class="btn btn-gold copy-btn" data-copy="09171234567" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
-                <i class="fa-regular fa-copy"></i> Copy Number
-              </button>
-              <button class="btn btn-outline-gold view-qr-btn" data-qr-src="assets/images/qr-gcash.svg" data-qr-title="GCash QR Code" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
-                <i class="fa-solid fa-qrcode"></i> View QR
-              </button>
-            </div>
-          </div>
-
-          <!-- Bank Transfer Card -->
-          <div class="gift-card">
-            <div class="gift-card-icon"><i class="fa-solid fa-building-columns"></i></div>
-            <h3 class="gift-method-name">Bank Transfer</h3>
-
-            <!-- QR Code Preview -->
-            <img src="assets/images/qr-bank.svg" alt="Bank QR Code" class="gift-qr-preview view-qr-btn" 
-                 data-qr-src="assets/images/qr-bank.svg" data-qr-title="Bank Transfer QR">
-
-            <div class="gift-account-info">
-              <p class="gift-account-label">Bank &amp; Account Name</p>
-              <p class="gift-account-val">JOSEPH DIO</p>
-              <br>
-              <p class="gift-account-label">Account Number</p>
-              <p class="gift-account-val">1234 5678 90</p>
-            </div>
-
-            <div class="gift-action-btns">
-              <button class="btn btn-gold copy-btn" data-copy="1234567890" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
-                <i class="fa-regular fa-copy"></i> Copy Account
-              </button>
-              <button class="btn btn-outline-gold view-qr-btn" data-qr-src="assets/images/qr-bank.svg" data-qr-title="Bank Transfer QR" style="font-size: 0.78rem; padding: 0.6rem 1.2rem;">
-                <i class="fa-solid fa-qrcode"></i> View QR
+              <button class="btn btn-gold view-qr-btn" data-qr-src="assets/images/qr-gcash.jpg" data-qr-title="Joseph D. — GCash QR Code" style="font-size: 0.85rem; padding: 0.75rem 1.6rem; width: 100%;">
+                <i class="fa-solid fa-qrcode"></i> View &amp; Save QR Code
               </button>
             </div>
           </div>
@@ -915,9 +888,10 @@
     </div>
 
     <!-- Wedding Music Audio Tag -->
-    <audio id="wedding-audio" loop preload="none">
+    <audio id="wedding-audio" loop preload="auto">
       <source src="assets/audio/sa-aking-puso.mp3" type="audio/mpeg">
-      
+      <source src="assets/audio/Sa Aking Puso By Kaye Cal.mp3" type="audio/mpeg">
+      <source src="assets/audio/wedding-song.mp3" type="audio/mpeg">
     </audio>
 
   </main>
