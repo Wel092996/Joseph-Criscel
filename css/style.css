@@ -1697,6 +1697,11 @@ button {
   margin: 0 auto;
 }
 
+.gift-cards-grid.single-card {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+}
+
 .gift-card {
   background: linear-gradient(150deg, rgba(74, 0, 31, 0.7), rgba(42, 0, 18, 0.9));
   border: 1.5px solid var(--color-gold-champagne);
@@ -1721,15 +1726,36 @@ button {
   margin-bottom: 1rem;
 }
 
+.gift-qr-container {
+  margin: 0 auto 1.3rem;
+  text-align: center;
+}
+
 .gift-qr-preview {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 1.2rem;
-  border-radius: var(--radius-sm);
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  margin: 0 auto 0.4rem;
+  border-radius: var(--radius-md);
   background: #fff;
-  padding: 5px;
-  border: 1px solid var(--color-gold-champagne);
+  padding: 8px;
+  border: 1.5px solid var(--color-gold-champagne);
   cursor: pointer;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-qr-preview:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(212, 175, 127, 0.4);
+}
+
+.gift-qr-hint {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-gold-light);
+  margin-top: 0.3rem;
 }
 
 .gift-account-info {
