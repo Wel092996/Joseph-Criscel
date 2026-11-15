@@ -40,7 +40,7 @@ A mobile-friendly, luxurious, and romantic digital wedding invitation website bu
    - St. Anthony of Padua Parish & Jamaica Mansions Subdivision with interactive Google Maps.
    - Direct **Google Maps** and **Open in Waze** navigation buttons for guests traveling to Tabaco City.
 5. **Dio and Boncolmo Entourage**:
-   - Parents of the Groom: Nestor Dio & Natividad Dio
+   - Parents of the Groom: Nestor Larot & Natividad Larot
    - Parents of the Bride: Domingo Boncolmo & Grace Burce
    - Principal Sponsors: 8 pairs of Ninongs & Ninangs
    - Best Man & Maid of Honor: Arthur Dio & Lovely Boncolmo
