@@ -11,7 +11,7 @@
 // ----------------------------------------------------------------------------
 const WEDDING_CONFIG = {
   brideName: "Criscel Boncolmo",
-  groomName: "Joseph Larot",
+  groomName: "Joseph Dio",
   coupleShortNames: "Criscel & Joseph",
   weddingDateString: "November 24, 2026 14:00:00", // Target countdown date
   weddingDisplayDate: "Tuesday, November 24, 2026",
