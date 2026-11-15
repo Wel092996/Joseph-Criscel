@@ -55,10 +55,10 @@ A mobile-friendly, luxurious, and romantic digital wedding invitation website bu
    - Visual color palette swatches: Burgundy, Wine, Champagne, Dusty Rose, Beige, Charcoal.
    - Clear guidelines for Principal Sponsors, Female Guests, and Male Guests.
 8. **RSVP Section**:
-   - Embedded Google Form for direct in-page mobile submission.
-   - Prominent **"Open RSVP in Google Forms"** button.
+   - Direct luxury RSVP response card with deadline reminder.
+   - Prominent **"Confirm Attendance (RSVP)"** button opening the Google Form.
 9. **Gift Registry / Wishing Well**:
-   - GCash & Bank Transfer cards with one-tap copy buttons and QR code modal.
+   - Dedicated GCash / InstaPay QR card for Joseph Dio with full-screen QR modal and image download.
 10. **Background Wedding Music**:
     - Floating compact music disc with animated sound bars.
     - Plays synthesized romantic acoustic harp/piano progression via Web Audio API (works 100% offline) or custom MP3.
