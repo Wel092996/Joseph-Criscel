@@ -473,7 +473,8 @@ function initGiftSection() {
       if (qrModalTitle) qrModalTitle.textContent = title;
       if (qrDownloadBtn) {
         qrDownloadBtn.href = src;
-        qrDownloadBtn.download = `${title.replace(/\s+/g, '-').toLowerCase()}-qr.svg`;
+        const ext = src.split('.').pop().split('?')[0] || 'jpg';
+        qrDownloadBtn.download = `${title.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}.${ext}`;
       }
 
       if (qrModal) {
@@ -503,38 +504,97 @@ function initGiftSection() {
 // ----------------------------------------------------------------------------
 // 8. Background Wedding Music & Web Audio Synthesizer
 // ----------------------------------------------------------------------------
-
 function initWeddingMusic() {
   const musicWidgets = document.querySelectorAll('.music-widget, .nav-music-btn');
   const audioTag = document.getElementById('wedding-audio');
 
   let isPlaying = false;
+  let audioCtx = null;
+  let synthInterval = null;
 
-  function playMusic() {
-    if (!audioTag) {
-      console.error('Wedding audio element not found.');
-      return;
+  // Romantic acoustic chord progression ("Sa Aking Puso" by Kaye Cal - C Major acoustic ballad)
+  const notes = [
+    261.63, 329.63, 392.00, 523.25, // C Major: C4, E4, G4, C5
+    246.94, 293.66, 392.00, 587.33, // G/B: B3, D4, G4, D5
+    220.00, 261.63, 329.63, 440.00, // Am: A3, C4, E4, A4
+    196.00, 246.94, 329.63, 392.00, // Em: G3, B3, E4, G4
+    174.61, 220.00, 261.63, 349.23, // F: F3, A3, C4, F4
+    164.81, 196.00, 261.63, 329.63, // C/E: E3, G3, C4, E4
+    146.83, 174.61, 220.00, 293.66, // Dm7: D3, F3, A3, D4
+    196.00, 246.94, 293.66, 392.00  // G: G3, B3, D4, G4
+  ];
+
+  function playSynthHarpNote(freq, time) {
+    if (!audioCtx) return;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, time);
+
+    // Soft acoustic harp / guitar pluck envelope
+    gain.gain.setValueAtTime(0.001, time);
+    gain.gain.exponentialRampToValueAtTime(0.09, time + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + 2.4);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start(time);
+    osc.stop(time + 2.5);
+  }
+
+  function startSynthProgression() {
+    if (!window.AudioContext && !window.webkitAudioContext) return;
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
     }
 
-    audioTag.play()
-      .then(() => {
-        isPlaying = true;
-        musicWidgets.forEach(w => w.classList.add('playing'));
-      })
-      .catch(error => {
-        isPlaying = false;
-        musicWidgets.forEach(w => w.classList.remove('playing'));
-        console.error('Unable to play wedding music:', error);
-      });
+    let noteIdx = 0;
+    synthInterval = setInterval(() => {
+      const now = audioCtx.currentTime;
+      playSynthHarpNote(notes[noteIdx % notes.length], now);
+      if (noteIdx % 4 === 0) {
+        playSynthHarpNote(notes[noteIdx % notes.length] / 2, now);
+      }
+      noteIdx++;
+    }, 450);
+  }
+
+  function stopSynthProgression() {
+    if (synthInterval) {
+      clearInterval(synthInterval);
+      synthInterval = null;
+    }
+  }
+
+  function playMusic() {
+    isPlaying = true;
+    musicWidgets.forEach(w => w.classList.add('playing'));
+
+    if (audioTag) {
+      const playPromise = audioTag.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          startSynthProgression();
+        });
+      }
+    } else {
+      startSynthProgression();
+    }
   }
 
   function pauseMusic() {
+    isPlaying = false;
+    musicWidgets.forEach(w => w.classList.remove('playing'));
+
     if (audioTag) {
       audioTag.pause();
     }
-
-    isPlaying = false;
-    musicWidgets.forEach(w => w.classList.remove('playing'));
+    stopSynthProgression();
   }
 
   function toggleMusic() {
@@ -545,14 +605,19 @@ function initWeddingMusic() {
     }
   }
 
-  musicWidgets.forEach(w => {
-    w.addEventListener('click', toggleMusic);
-  });
+  musicWidgets.forEach(w => w.addEventListener('click', toggleMusic));
 
-  audioTag?.addEventListener('ended', () => {
-    isPlaying = false;
-    musicWidgets.forEach(w => w.classList.remove('playing'));
-  });
+  // Autoplay attempt on user's first touch/interaction on mobile
+  const startAudioOnFirstInteraction = () => {
+    if (!isPlaying) {
+      playMusic();
+    }
+    window.removeEventListener('click', startAudioOnFirstInteraction);
+    window.removeEventListener('touchstart', startAudioOnFirstInteraction);
+  };
+
+  window.addEventListener('click', startAudioOnFirstInteraction, { once: true });
+  window.addEventListener('touchstart', startAudioOnFirstInteraction, { once: true });
 
   window.WeddingAudio = {
     play: playMusic,
@@ -561,6 +626,7 @@ function initWeddingMusic() {
     isPlaying: () => isPlaying
   };
 }
+
 // ----------------------------------------------------------------------------
 // 9. Sticky Navigation, Mobile Drawer & ScrollSpy
 // ----------------------------------------------------------------------------
