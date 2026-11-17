@@ -25,6 +25,9 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Embedded QR Code Data for 100% Mobile & Offline Reliability -->
+  <script src="js/qr-data.js"></script>
 </head>
 <body>
 
@@ -826,10 +829,14 @@
             <div class="gift-card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
             <h3 class="gift-method-name">GCash / InstaPay</h3>
 
-            <!-- QR Code Preview -->
+            <!-- QR Code Preview (Optimized for Mobile & Desktop) -->
             <div class="gift-qr-container">
-              <img src="assets/images/qr-gcash.jpg?v=2" alt="GCash QR Code - Joseph Dio" class="gift-qr-preview view-qr-btn" 
-                   data-qr-src="assets/images/qr-gcash.jpg?v=2" data-qr-title="Joseph D. — GCash QR Code">
+              <img src="assets/images/qr-gcash.jpg" 
+                   alt="GCash QR Code - Joseph Dio" 
+                   class="gift-qr-preview view-qr-btn" 
+                   data-qr-src="assets/images/qr-gcash.jpg" 
+                   data-qr-title="Joseph D. — GCash QR Code"
+                   onerror="this.onerror=null; if(window.GCASH_QR_DATA) this.src=window.GCASH_QR_DATA;">
               <p class="gift-qr-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Tap to enlarge / scan QR</p>
             </div>
 
@@ -842,7 +849,10 @@
             </div>
 
             <div class="gift-action-btns">
-              <button class="btn btn-gold view-qr-btn" data-qr-src="assets/images/qr-gcash.jpg?v=2" data-qr-title="Joseph D. — GCash QR Code" style="font-size: 0.85rem; padding: 0.75rem 1.6rem; width: 100%;">
+              <button class="btn btn-gold view-qr-btn" 
+                      data-qr-src="assets/images/qr-gcash.jpg" 
+                      data-qr-title="Joseph D. — GCash QR Code" 
+                      style="font-size: 0.85rem; padding: 0.75rem 1.6rem; width: 100%;">
                 <i class="fa-solid fa-qrcode"></i> View &amp; Save QR Code
               </button>
             </div>
@@ -858,8 +868,8 @@
       </button>
       <div class="lightbox-content" style="max-width: 380px; text-align: center;">
         <h3 id="qr-modal-title" class="lightbox-title" style="margin-bottom: 1rem;">QR Code</h3>
-        <img id="qr-modal-img" src="" alt="Full QR Code" style="background: #fff; padding: 10px; border-radius: 12px; width: 100%; max-width: 290px; margin: 0 auto 1.2rem; border: 2px solid var(--color-gold-champagne);">
-        <a id="qr-download-btn" href="#" download class="btn btn-gold" style="font-size: 0.8rem; width: 100%;">
+        <img id="qr-modal-img" src="assets/images/qr-gcash.jpg" alt="Full QR Code" onerror="this.onerror=null; if(window.GCASH_QR_DATA) this.src=window.GCASH_QR_DATA;" style="background: #fff; padding: 10px; border-radius: 12px; width: 100%; max-width: 290px; min-height: 250px; aspect-ratio: 538 / 703; object-fit: contain; margin: 0 auto 1.2rem; border: 2px solid var(--color-gold-champagne);">
+        <a id="qr-download-btn" href="assets/images/qr-gcash.jpg" download="joseph-dio-gcash-qr.jpg" class="btn btn-gold" style="font-size: 0.8rem; width: 100%;">
           <i class="fa-solid fa-download"></i> Save QR Code
         </a>
       </div>
