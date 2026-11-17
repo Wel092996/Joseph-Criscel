@@ -456,6 +456,17 @@ function initGiftSection() {
     showToast(`Copied "${text}" to clipboard!`);
   }
 
+  // Mobile fallback guarantee for QR preview
+  const qrPreview = document.querySelector('.gift-qr-preview');
+  if (qrPreview && window.GCASH_QR_DATA) {
+    if (qrPreview.complete && qrPreview.naturalWidth === 0) {
+      qrPreview.src = window.GCASH_QR_DATA;
+    }
+    qrPreview.addEventListener('error', () => {
+      qrPreview.src = window.GCASH_QR_DATA;
+    });
+  }
+
   // QR Modal View & Download
   const qrModal = document.getElementById('qr-modal');
   const qrModalImg = document.getElementById('qr-modal-img');
@@ -466,15 +477,22 @@ function initGiftSection() {
 
   viewQrBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const src = btn.getAttribute('data-qr-src');
+      const src = btn.getAttribute('data-qr-src') || "assets/images/qr-gcash.jpg";
       const title = btn.getAttribute('data-qr-title') || "QR Code";
 
-      if (qrModalImg) qrModalImg.src = src;
+      if (qrModalImg) {
+        qrModalImg.src = src;
+        qrModalImg.onerror = function() {
+          if (window.GCASH_QR_DATA) {
+            qrModalImg.src = window.GCASH_QR_DATA;
+          }
+        };
+      }
       if (qrModalTitle) qrModalTitle.textContent = title;
       if (qrDownloadBtn) {
-        qrDownloadBtn.href = src;
-        const ext = src.split('.').pop().split('?')[0] || 'jpg';
-        qrDownloadBtn.download = `${title.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase()}.${ext}`;
+        // Use embedded Base64 data if available for instant offline mobile saving
+        qrDownloadBtn.href = window.GCASH_QR_DATA || src;
+        qrDownloadBtn.download = `joseph-dio-gcash-qr.jpg`;
       }
 
       if (qrModal) {
