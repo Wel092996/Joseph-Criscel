@@ -8,37 +8,37 @@
    1. CSS Custom Properties / Design Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* Burgundy Color Palette — Lighter Shade */
-  --color-burgundy-deep: #C0405A;
-  --color-wine-dark: #8B2040;
-  --color-wine-deepest: #621030;
-  --color-burgundy-red: #A83050;
-  --color-burgundy-soft: #D4607A;
-  --color-burgundy-light: #FDF3F5;
+  /* Burgundy Color Palette — Soft, Rich & Perfectly Harmonized */
+  --color-burgundy-deep: #7D1D3F;
+  --color-wine-dark: #5C132B;
+  --color-wine-deepest: #3F0B1C;
+  --color-burgundy-red: #9B2D4F;
+  --color-burgundy-soft: #BA4E6E;
+  --color-burgundy-light: #FAF0F3;
 
   /* Champagne Gold Accents */
-  --color-gold-champagne: #D4AF7F;
-  --color-gold-light: #F7E7CE;
-  --color-gold-bright: #F5D08B;
-  --color-gold-dark: #AA7738;
-  --color-gold-muted: #9C6B30;
+  --color-gold-champagne: #D4AF7A;
+  --color-gold-light: #F8EEDA;
+  --color-gold-bright: #F2CC85;
+  --color-gold-dark: #A67638;
+  --color-gold-muted: #8F642E;
 
   /* Neutrals & Backgrounds */
-  --color-ivory: #FFF8F4;
-  --color-beige-soft: #F8EDE5;
-  --color-cream: #FDF6EF;
+  --color-ivory: #FDFBF8;
+  --color-beige-soft: #F6EDE4;
+  --color-cream: #FAF3EC;
   --color-white: #FFFFFF;
-  --color-text-dark: #3A1A25;
-  --color-text-muted: #7A5565;
-  --color-text-light: #F8EDE5;
-  --color-dark-surface: #4A1028;
+  --color-text-dark: #2C131D;
+  --color-text-muted: #6E525E;
+  --color-text-light: #F6EDE4;
+  --color-dark-surface: #380918;
 
   /* Gradients */
-  --grad-gold: linear-gradient(135deg, #FFF8F0 0%, #F5D08B 25%, #D4AF7F 60%, #AA7738 100%);
-  --grad-gold-subtle: linear-gradient(135deg, rgba(245,208,139,0.3) 0%, rgba(212,175,127,0.15) 100%);
-  --grad-burgundy: linear-gradient(145deg, #C0405A 0%, #A83050 45%, #8B2040 100%);
-  --grad-burgundy-dark: linear-gradient(180deg, #8B2040 0%, #621030 100%);
-  --grad-hero-overlay: linear-gradient(180deg, rgba(98,16,48,0.80) 0%, rgba(139,32,64,0.72) 45%, rgba(74,16,40,0.90) 100%);
+  --grad-gold: linear-gradient(135deg, #FAF2E6 0%, #F2CC85 30%, #D4AF7A 70%, #A67638 100%);
+  --grad-gold-subtle: linear-gradient(135deg, rgba(242, 204, 133, 0.25) 0%, rgba(212, 175, 122, 0.12) 100%);
+  --grad-burgundy: linear-gradient(135deg, #9B2D4F 0%, #7D1D3F 50%, #5C132B 100%);
+  --grad-burgundy-dark: linear-gradient(180deg, #5C132B 0%, #3F0B1C 100%);
+  --grad-hero-overlay: linear-gradient(180deg, rgba(63, 11, 28, 0.82) 0%, rgba(92, 19, 43, 0.72) 45%, rgba(44, 7, 19, 0.90) 100%);
 
   /* Typography */
   --font-script: 'Great Vibes', cursive;
@@ -46,11 +46,11 @@
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Shadows & Glassmorphism */
-  --shadow-sm: 0 4px 12px rgba(98, 16, 48, 0.08);
-  --shadow-md: 0 10px 30px rgba(98, 16, 48, 0.16);
-  --shadow-lg: 0 20px 50px rgba(74, 16, 40, 0.24);
-  --shadow-gold: 0 0 25px rgba(212, 175, 127, 0.35);
-  --shadow-glow: 0 0 40px rgba(192, 64, 90, 0.35);
+  --shadow-sm: 0 4px 14px rgba(63, 11, 28, 0.07);
+  --shadow-md: 0 10px 30px rgba(63, 11, 28, 0.14);
+  --shadow-lg: 0 20px 50px rgba(44, 7, 19, 0.22);
+  --shadow-gold: 0 0 25px rgba(212, 175, 122, 0.35);
+  --shadow-glow: 0 0 35px rgba(125, 29, 63, 0.35);
 
   /* Layout & Transitions */
   --radius-sm: 8px;
@@ -299,7 +299,7 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at center, #8B2040 0%, #4A1028 100%);
+  background: radial-gradient(circle at center, #5C132B 0%, #340716 100%);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -319,12 +319,12 @@ button {
   position: relative;
   width: 100%;
   max-width: 580px;
-  background: linear-gradient(145deg, #A83050, #7A1535);
+  background: linear-gradient(145deg, #6E1A36, #3F0B1C);
   border: 2px solid var(--color-gold-champagne);
   border-radius: var(--radius-md);
   padding: clamp(2.4rem, 5vw, 3.6rem) clamp(1.4rem, 4.5vw, 2.8rem);
   text-align: center;
-  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.85), 0 0 45px rgba(212, 175, 127, 0.3);
+  box-shadow: 0 25px 75px rgba(0, 0, 0, 0.75), 0 0 45px rgba(212, 175, 122, 0.25);
   overflow: hidden;
   margin: auto;
   max-height: 94vh;
@@ -485,18 +485,18 @@ button {
   left: 0;
   width: 100%;
   height: 54px;
-  background: rgba(100, 25, 55, 0.95);
+  background: rgba(63, 11, 28, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(212, 175, 127, 0.28);
+  border-bottom: 1px solid rgba(212, 175, 122, 0.28);
   z-index: 1000;
   transition: var(--transition-fast);
 }
 
 .navbar.scrolled {
-  background: rgba(74, 16, 40, 0.98);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  border-bottom-color: rgba(212, 175, 127, 0.4);
+  background: rgba(44, 7, 19, 0.98);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border-bottom-color: rgba(212, 175, 122, 0.4);
 }
 
 .navbar .container {
@@ -640,7 +640,7 @@ button {
   width: 82%;
   max-width: 340px;
   height: 100vh;
-  background: linear-gradient(180deg, #7A2040 0%, #4A1028 100%);
+  background: linear-gradient(180deg, #5C132B 0%, #340716 100%);
   border-left: 2px solid var(--color-gold-champagne);
   box-shadow: -10px 0 40px rgba(0,0,0,0.8);
   z-index: 1050;
@@ -744,13 +744,13 @@ button {
   position: relative;
   width: 100%;
   max-width: 800px;
-  background: rgba(100, 25, 55, 0.60);
+  background: rgba(63, 11, 28, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1.5px solid var(--color-gold-champagne);
   border-radius: var(--radius-lg);
   padding: clamp(1.6rem, 4vw, 3rem) clamp(1rem, 4vw, 2.8rem);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 30px rgba(212,175,127,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 30px rgba(212,175,122,0.2);
   z-index: 2;
   margin: auto;
 }
@@ -869,10 +869,10 @@ button {
    7. Wedding Countdown Section
    -------------------------------------------------------------------------- */
 .countdown-section {
-  background: linear-gradient(180deg, #7A1C3A 0%, #A8304E 50%, #7A1C3A 100%);
+  background: linear-gradient(180deg, #3F0B1C 0%, #5C132B 50%, #3F0B1C 100%);
   padding: clamp(2rem, 3.5vw, 2.8rem) 0;
-  border-top: 1px solid rgba(212, 175, 127, 0.3);
-  border-bottom: 1px solid rgba(212, 175, 127, 0.3);
+  border-top: 1px solid rgba(212, 175, 122, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 122, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -886,12 +886,12 @@ button {
 }
 
 .countdown-card {
-  background: linear-gradient(145deg, #B83C58, #8B2040);
+  background: linear-gradient(145deg, #6E1A36, #460C1E);
   border: 1.5px solid var(--color-gold-champagne);
   border-radius: var(--radius-md);
   padding: clamp(0.75rem, 1.8vw, 1.1rem) clamp(0.35rem, 1vw, 0.75rem);
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   position: relative;
 }
 
@@ -1121,7 +1121,7 @@ button {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(130, 20, 60, 0.85);
+  background: rgba(92, 19, 43, 0.88);
   border: 1px solid var(--color-gold-champagne);
   color: var(--color-gold-light);
   font-size: 1.1rem;
@@ -1138,7 +1138,7 @@ button {
    9. Wedding Details Section (Ceremony & Reception)
    -------------------------------------------------------------------------- */
 .details-section {
-  background: linear-gradient(180deg, #6B1830 0%, #4A1028 100%);
+  background: linear-gradient(180deg, #440D1F 0%, #2E0814 100%);
   color: var(--color-ivory);
 }
 
@@ -1151,11 +1151,11 @@ button {
 }
 
 .detail-card {
-  background: linear-gradient(160deg, rgba(168, 48, 80, 0.70), rgba(100, 24, 48, 0.88));
+  background: linear-gradient(160deg, rgba(92, 19, 43, 0.75), rgba(63, 11, 28, 0.92));
   border: 1.5px solid var(--color-gold-champagne);
   border-radius: var(--radius-lg);
   padding: 2.5rem 1.8rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1166,7 +1166,7 @@ button {
   content: '';
   position: absolute;
   top: 8px; left: 8px; right: 8px; bottom: 8px;
-  border: 1px solid rgba(212, 175, 127, 0.3);
+  border: 1px solid rgba(212, 175, 122, 0.3);
   border-radius: calc(var(--radius-lg) - 4px);
   pointer-events: none;
 }
@@ -1175,9 +1175,9 @@ button {
   width: clamp(86px, 12vw, 102px);
   height: clamp(86px, 12vw, 102px);
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, rgba(245, 208, 139, 0.28), rgba(168, 48, 80, 0.75));
+  background: radial-gradient(circle at 35% 35%, rgba(242, 204, 133, 0.28), rgba(92, 19, 43, 0.8));
   border: 2px solid var(--color-gold-champagne);
-  box-shadow: 0 0 25px rgba(212, 175, 127, 0.38), 0 8px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 25px rgba(212, 175, 122, 0.35), 0 8px 20px rgba(0, 0, 0, 0.5);
   color: var(--color-gold-bright);
   font-size: clamp(2.4rem, 5vw, 3rem);
   display: flex;
@@ -1502,7 +1502,7 @@ button {
    12. Dress Code Section
    -------------------------------------------------------------------------- */
 .dresscode-section {
-  background: linear-gradient(180deg, #6B1830 0%, #4A1225 100%);
+  background: linear-gradient(180deg, #440D1F 0%, #2E0814 100%);
   color: var(--color-ivory);
 }
 
@@ -1548,8 +1548,8 @@ button {
 }
 
 .dresscode-card {
-  background: rgba(130, 32, 65, 0.50);
-  border: 1px solid rgba(212, 175, 127, 0.4);
+  background: rgba(92, 19, 43, 0.45);
+  border: 1px solid rgba(212, 175, 122, 0.4);
   border-radius: var(--radius-md);
   padding: 2rem 1.5rem;
   text-align: center;
@@ -1684,7 +1684,7 @@ button {
    14. Gift / Wishing Well Section
    -------------------------------------------------------------------------- */
 .gift-section {
-  background: linear-gradient(180deg, #280012 0%, #3D001C 100%);
+  background: linear-gradient(180deg, #440D1F 0%, #2E0814 100%);
   color: var(--color-ivory);
 }
 
@@ -1702,7 +1702,7 @@ button {
 }
 
 .gift-card {
-  background: linear-gradient(150deg, rgba(74, 0, 31, 0.7), rgba(42, 0, 18, 0.9));
+  background: linear-gradient(150deg, rgba(92, 19, 43, 0.8), rgba(63, 11, 28, 0.95));
   border: 1.5px solid var(--color-gold-champagne);
   border-radius: var(--radius-lg);
   padding: 2.4rem 1.8rem;
@@ -1728,15 +1728,21 @@ button {
 .gift-qr-container {
   margin: 0 auto 1.3rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .gift-qr-preview {
   width: 100%;
-  max-width: 210px;
-  height: auto;
+  max-width: 220px;
+  min-height: 220px;
+  aspect-ratio: 538 / 703;
+  object-fit: contain;
   margin: 0 auto 0.4rem;
   border-radius: var(--radius-md);
-  background: #fff;
+  background: #FFFFFF;
   padding: 8px;
   border: 1.5px solid var(--color-gold-champagne);
   cursor: pointer;
@@ -1747,7 +1753,7 @@ button {
 
 .gift-qr-preview:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(212, 175, 127, 0.4);
+  box-shadow: 0 12px 30px rgba(212, 175, 122, 0.4);
 }
 
 .gift-qr-hint {
@@ -1900,8 +1906,8 @@ button {
    16. Footer Section
    -------------------------------------------------------------------------- */
 .footer-section {
-  background: #140008;
-  border-top: 1px solid rgba(212, 175, 127, 0.35);
+  background: #240610;
+  border-top: 1px solid rgba(212, 175, 122, 0.35);
   color: var(--color-ivory);
   padding: 4.5rem 0 2rem;
   text-align: center;
