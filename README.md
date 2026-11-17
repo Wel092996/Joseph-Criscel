@@ -12,7 +12,7 @@ A mobile-friendly, luxurious, and romantic digital wedding invitation website bu
 - **Reception**: Jamaica Mansions Subdivision, Panal, Tabaco City, Albay
 - **RSVP Form**: [Google Forms RSVP Link](https://docs.google.com/forms/d/e/1FAIpQLSfSSxDoGPlh1x8Yj_5s2AYNP6GotcGR0CI0ZDExOr06hC7Aiw/viewform)
 - **Navigation Links**: Direct Google Maps & Waze navigation buttons for Church and Reception
-- **Color Theme**: Deep Burgundy (`#800020`), Dark Wine (`#4A001F`), Champagne Gold (`#D4AF7F`), Ivory (`#FFF8F0`), and Soft Beige (`#F5EBDD`)
+- **Color Theme**: Velvety Rosewood Burgundy (`#7D1D3F`), Rich Wine (`#5C132B`), Champagne Gold (`#D4AF7A`), Alabaster Ivory (`#FDFBF8`), and Soft Cashmere (`#F6EDE4`)
 
 ---
 
