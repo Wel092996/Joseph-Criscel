@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8F0" />
+      <stop offset="30%" stop-color="#F5D08B" />
+      <stop offset="70%" stop-color="#D4AF7F" />
+      <stop offset="100%" stop-color="#AA7738" />
+    </linearGradient>
+    <linearGradient id="wineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7D1D3F" />
+      <stop offset="50%" stop-color="#5C132B" />
+      <stop offset="100%" stop-color="#3F0B1C" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#F5D08B" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Gold Ring -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-dasharray="8 4" opacity="0.85" />
+  <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" />
+  
+  <!-- Burgundy Inner Medallion -->
+  <circle cx="100" cy="100" r="78" fill="url(#wineGrad)" filter="url(#shadow)" />
+  <circle cx="100" cy="100" r="74" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.65" />
+  
+  <!-- Laurel / Olive Wreath Arching Symmetrically Above -->
+  <g fill="none" stroke="url(#goldGrad)" stroke-width="1.8" stroke-linecap="round">
+    <!-- Left wreath branch -->
+    <path d="M 42 105 C 40 70, 64 42, 95 38" />
+    <path d="M 44 95 C 36 90, 40 82, 48 88 Z" fill="url(#goldGrad)"/>
+    <path d="M 51 78 C 43 72, 49 64, 56 71 Z" fill="url(#goldGrad)"/>
+    <path d="M 63 62 C 56 55, 65 48, 71 56 Z" fill="url(#goldGrad)"/>
+    <path d="M 80 48 C 75 40, 85 36, 89 44 Z" fill="url(#goldGrad)"/>
+
+    <!-- Right wreath branch -->
+    <path d="M 158 105 C 160 70, 136 42, 105 38" />
+    <path d="M 156 95 C 164 90, 160 82, 152 88 Z" fill="url(#goldGrad)"/>
+    <path d="M 149 78 C 157 72, 151 64, 144 71 Z" fill="url(#goldGrad)"/>
+    <path d="M 137 62 C 144 55, 135 48, 129 56 Z" fill="url(#goldGrad)"/>
+    <path d="M 120 48 C 125 40, 115 36, 111 44 Z" fill="url(#goldGrad)"/>
+  </g>
+  
+  <!-- Classic Balanced Serif Initials "J & C" (Groom & Bride) -->
+  <g filter="url(#goldGlow)">
+    <!-- Letter J (Groom - Joseph) on the LEFT -->
+    <text x="68" y="118"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="bold"
+          font-size="52"
+          fill="url(#goldGrad)"
+          text-anchor="middle">J</text>
+    
+    <!-- Ampersand in the CENTER -->
+    <text x="100" y="105"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="bold"
+          font-size="24"
+          fill="#FFF8F0"
+          text-anchor="middle"
+          opacity="0.95">&amp;</text>
+    
+    <!-- Letter C (Bride - Criscel) on the RIGHT -->
+    <text x="132" y="118"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="bold"
+          font-size="52"
+          fill="url(#goldGrad)"
+          text-anchor="middle">C</text>
+  </g>
+  
+  <!-- Gold Star Below Initials -->
+  <g fill="url(#goldGrad)" transform="translate(100, 139)">
+    <polygon points="0,-5 3,-1 7,-1 4,2 5,6 0,3 -5,6 -4,2 -7,-1 -3,-1" />
+  </g>
+  
+  <!-- Month & Year -->
+  <text x="100" y="156"
+        font-family="'Arial Narrow', Arial, sans-serif"
+        font-weight="bold"
+        font-size="8.5"
+        fill="#F5EBDD"
+        text-anchor="middle"
+        letter-spacing="3"
+        opacity="0.9">NOVEMBER 2026</text>
+</svg>
