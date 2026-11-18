@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * PREMIUM BURGUNDY & CHAMPAGNE GOLD WEDDING INVITATION
- * Criscel & Joseph — November 24, 2026 | Tabaco City, Albay
+ * Joseph & Criscel — November 24, 2026 | Tabaco City, Albay
  * Interactive Scripts & Mobile-Optimized Application Logic
  * ============================================================================
  */
@@ -12,7 +12,7 @@
 const WEDDING_CONFIG = {
   brideName: "Criscel Boncolmo",
   groomName: "Joseph Dio",
-  coupleShortNames: "Criscel & Joseph",
+  coupleShortNames: "Joseph & Criscel",
   weddingDateString: "November 24, 2026 14:00:00", // Target countdown date
   weddingDisplayDate: "Tuesday, November 24, 2026",
   weddingSong: "Sa Aking Puso by Kaye Cal",
