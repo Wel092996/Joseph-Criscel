@@ -7,9 +7,9 @@
       <stop offset="100%" stop-color="#AA7738" />
     </linearGradient>
     <linearGradient id="wineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#800020" />
-      <stop offset="50%" stop-color="#550018" />
-      <stop offset="100%" stop-color="#30000E" />
+      <stop offset="0%" stop-color="#7D1D3F" />
+      <stop offset="50%" stop-color="#5C132B" />
+      <stop offset="100%" stop-color="#3F0B1C" />
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"/>
@@ -45,20 +45,20 @@
     <path d="M 120 48 C 125 40, 115 36, 111 44 Z" fill="url(#goldGrad)"/>
   </g>
   
-  <!-- Classic Balanced Serif Italic Initials "C & J" -->
+  <!-- Classic Balanced Serif Italic Initials "J & C" (Groom & Bride) -->
   <g filter="url(#goldGlow)">
-    <!-- Letter C -->
+    <!-- Letter J (Groom - Joseph) -->
     <text x="68" y="118"
-          font-family="Georgia, 'Times New Roman', serif"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
           font-style="italic"
           font-weight="bold"
           font-size="52"
           fill="url(#goldGrad)"
-          text-anchor="middle">C</text>
+          text-anchor="middle">J</text>
     
     <!-- Ampersand -->
-    <text x="100" y="106"
-          font-family="Georgia, 'Times New Roman', serif"
+    <text x="100" y="105"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
           font-style="italic"
           font-weight="bold"
           font-size="24"
@@ -66,14 +66,14 @@
           text-anchor="middle"
           opacity="0.95">&amp;</text>
     
-    <!-- Letter J -->
-    <text x="132" y="120"
-          font-family="Georgia, 'Times New Roman', serif"
+    <!-- Letter C (Bride - Criscel) -->
+    <text x="132" y="118"
+          font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
           font-style="italic"
           font-weight="bold"
           font-size="52"
           fill="url(#goldGrad)"
-          text-anchor="middle">J</text>
+          text-anchor="middle">C</text>
   </g>
   
   <!-- Gold Star Below Initials -->

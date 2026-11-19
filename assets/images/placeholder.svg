@@ -17,14 +17,11 @@
   
   <!-- Rings Icon in Center -->
   <g transform="translate(400, 270)">
-    <!-- Ring 1 -->
     <ellipse cx="-25" cy="0" rx="45" ry="50" fill="none" stroke="url(#goldL)" stroke-width="5" transform="rotate(-15)"/>
-    <!-- Diamond atop ring 1 -->
     <polygon points="-58,-48 -50,-56 -42,-48 -50,-38" fill="url(#goldL)"/>
-    <!-- Ring 2 -->
     <ellipse cx="25" cy="5" rx="45" ry="50" fill="none" stroke="url(#goldL)" stroke-width="5" transform="rotate(15)"/>
   </g>
   
-  <text x="400" y="380" font-family="'Great Vibes', cursive" font-size="44" fill="url(#goldL)" text-anchor="middle">Isabella &amp; Alexander</text>
-  <text x="400" y="420" font-family="'Montserrat', sans-serif" font-size="14" fill="#F5EBDD" text-anchor="middle" letter-spacing="4" opacity="0.85">PRENUPTIAL PORTRAIT</text>
+  <text x="400" y="380" font-family="'Great Vibes', cursive" font-size="46" fill="url(#goldL)" text-anchor="middle">Joseph &amp; Criscel</text>
+  <text x="400" y="420" font-family="'Montserrat', sans-serif" font-size="14" fill="#F5EBDD" text-anchor="middle" letter-spacing="4" opacity="0.85">NOVEMBER 24, 2026 &bull; TABACO CITY</text>
 </svg>
