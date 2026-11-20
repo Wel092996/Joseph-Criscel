@@ -594,14 +594,9 @@ function initWeddingMusic() {
     musicWidgets.forEach(w => w.classList.add('playing'));
 
     if (audioTag) {
-      const playPromise = audioTag.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          startSynthProgression();
-        });
-      }
-    } else {
-      startSynthProgression();
+      audioTag.play().catch(() => {
+        // MP3 blocked by browser autoplay policy — do nothing, wait for user interaction
+      });
     }
   }
 
